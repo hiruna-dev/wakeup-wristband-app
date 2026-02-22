@@ -1,0 +1,37 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_foreground
+id autocomplete_fragment
+id btnConnect
+id btnDelete
+id btnTest
+id buttonContainer
+id etLat
+id etLng
+id etName
+id etRadius
+id fabAdd
+id fabSave
+id map
+id recyclerView
+id tvBleStatus
+id tvCoords
+id tvName
+id tvRadius
+id tvTitle
+layout activity_main
+layout activity_map_picker
+layout dialog_add_location
+layout dialog_save_location
+layout item_location
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.WristbandApp
