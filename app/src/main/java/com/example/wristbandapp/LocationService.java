@@ -29,6 +29,7 @@ public class LocationService extends Service {
     private DatabaseHelper databaseHelper;
     private BleManager bleManager;
     private boolean isLedOn = false;
+    private boolean isManualOverride = false;
 
     @Override
     public void onCreate() {
@@ -94,6 +95,7 @@ public class LocationService extends Service {
                     Log.i(TAG, "Manual Stop Triggered. Turning off LED.");
                     bleManager.sendOffAlert();
                     isLedOn = false;
+                    isManualOverride = true;
                 }
             }
         }
@@ -142,17 +144,22 @@ public class LocationService extends Service {
 
             if (distanceInMeters <= item.radiusMeters) {
                 nearAny = true;
-                Log.i(TAG, "Within radius of " + item.name + "! Triggering ESP32.");
-                bleManager.sendAlert();
-                isLedOn = true;
+                if (!isLedOn && !isManualOverride) {
+                    Log.i(TAG, "Within radius of " + item.name + "! Triggering ESP32.");
+                    bleManager.sendAlert();
+                    isLedOn = true;
+                }
                 break;
             }
         }
 
-        if (!nearAny && isLedOn) {
-            Log.i(TAG, "Exited all radii or deleted target. Turning OFF ESP32.");
-            bleManager.sendOffAlert();
-            isLedOn = false;
+        if (!nearAny) {
+            if (isLedOn) {
+                Log.i(TAG, "Exited all radii or deleted target. Turning OFF ESP32.");
+                bleManager.sendOffAlert();
+                isLedOn = false;
+            }
+            isManualOverride = false;
         }
     }
 
