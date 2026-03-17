@@ -1,36 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  dialog_add_location.xml  –  Add Location Dialog
+  Styled with purple TextInputLayout to match UI design theme
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:paddingHorizontal="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="8dp">
 
-    <EditText
-        android:id="@+id/etName"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Location Name (e.g. Home)"
-        android:inputType="text" />
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/purple_primary"
+        app:hintTextColor="@color/purple_primary"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
 
-    <EditText
-        android:id="@+id/etLat"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location Name (e.g. Home)"
+            android:inputType="text"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Latitude (e.g. 51.5074)"
-        android:inputType="numberDecimal|numberSigned" />
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/purple_primary"
+        app:hintTextColor="@color/purple_primary"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
 
-    <EditText
-        android:id="@+id/etLng"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Latitude (e.g. 51.5074)"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Longitude (e.g. -0.1278)"
-        android:inputType="numberDecimal|numberSigned" />
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/purple_primary"
+        app:hintTextColor="@color/purple_primary"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
 
-    <EditText
-        android:id="@+id/etRadius"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Longitude (e.g. -0.1278)"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Radius in meters (e.g. 100)"
-        android:inputType="numberDecimal" />
+        android:layout_marginBottom="4dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/purple_primary"
+        app:hintTextColor="@color/purple_primary"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRadius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Radius in meters (e.g. 100)"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

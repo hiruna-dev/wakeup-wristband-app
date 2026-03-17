@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  dialog_save_location.xml  –  Save Location Dialog (from map picker)
+  Styled with purple TextInputLayout to match UI design theme
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:paddingHorizontal="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="8dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,21 +18,60 @@
         android:text="Location Details"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/etName"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Custom Location Name (e.g. Home)"
-        android:inputType="text" />
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/purple_primary"
+        app:hintTextColor="@color/purple_primary"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
 
-    <EditText
-        android:id="@+id/etRadius"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Custom Location Name (e.g. Home)"
+            android:inputType="text"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Radius in meters (e.g. 50)"
-        android:inputType="numberDecimal" 
-        android:layout_marginTop="8dp"/>
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/tvRadiusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Radius: 50m"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderRadius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="20"
+            android:valueTo="500"
+            android:value="50"
+            android:stepSize="10"
+            app:thumbColor="@color/purple_primary"
+            app:trackColorActive="@color/purple_primary"
+            app:trackColorInactive="#D1D5DB" />
+            
+    </LinearLayout>
 
 </LinearLayout>

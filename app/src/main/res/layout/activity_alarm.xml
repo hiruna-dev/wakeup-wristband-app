@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  activity_alarm.xml  –  Set Wristband Alarm
+  Matches: ui_design/alarm_screen.html
+  White bg, clock face, day repeat, vibration, label, set alarm button
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_screen_gradient"
+    tools:context=".AlarmActivity">
+
+    <!-- ── Scrollable main content ── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── Top Navigation bar ── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@android:color/transparent">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_chevron_left"
+                    app:tint="@color/text_primary"
+                    android:contentDescription="Back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/title"
+                    android:text="Set Alarm"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp" />
+
+            </FrameLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E5E7EB" />
+
+            <!-- Content padding start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingTop="32dp">
+
+                <!-- ── Time Picker ── -->
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="28dp"
+                    android:timePickerMode="spinner" />
+
+                <!-- ── Repeat section ── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/subtitle"
+                    android:text="Repeat"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/daySelector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- S -->
+                    <TextView
+                        android:id="@+id/daySun"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/shape_circle_outline"
+                        android:gravity="center"
+                        android:text="S"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- M (selected) -->
+                    <TextView
+                        android:id="@+id/dayMon"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/shape_circle_filled"
+                        android:gravity="center"
+                        android:text="M"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- T -->
+                    <TextView
+                        android:id="@+id/dayTue"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/shape_circle_outline"
+                        android:gravity="center"
+                        android:text="T"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- W (selected) -->
+                    <TextView
+                        android:id="@+id/dayWed"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/shape_circle_filled"
+                        android:gravity="center"
+                        android:text="W"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- T -->
+                    <TextView
+                        android:id="@+id/dayThu"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/shape_circle_outline"
+                        android:gravity="center"
+                        android:text="T"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- F (selected) -->
+                    <TextView
+                        android:id="@+id/dayFri"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/shape_circle_filled"
+                        android:gravity="center"
+                        android:text="F"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- S -->
+                    <TextView
+                        android:id="@+id/daySat"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/shape_circle_outline"
+                        android:gravity="center"
+                        android:text="S"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- ── Vibration Intensity ── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/subtitle"
+                    android:text="Vibration Intensity"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp" />
+
+                <!-- Segmented control -->
+                <LinearLayout
+                    android:id="@+id/vibrationPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="28dp"
+                    android:background="@drawable/shape_segment_outline"
+                    android:orientation="horizontal"
+                    android:clipChildren="true">
+
+                    <TextView
+                        android:id="@+id/vibLow"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Low"
+                        android:textColor="@color/purple_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/purple_primary" />
+
+                    <!-- Medium (selected) -->
+                    <TextView
+                        android:id="@+id/vibMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/purple_primary"
+                        android:gravity="center"
+                        android:text="Medium"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/purple_primary" />
+
+                    <TextView
+                        android:id="@+id/vibHigh"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="High"
+                        android:textColor="@color/purple_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- ── Alarm Label Input ── -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="@color/purple_primary"
+                    app:hintTextColor="@color/purple_primary"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_pencil"
+                    app:endIconTint="@color/purple_primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAlarmLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Alarm Label (optional)"
+                        android:inputType="text"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Fixed bottom "Set Alarm" button ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:background="#99FFFFFF"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:paddingHorizontal="24dp">
+
+        <Button
+            android:id="@+id/btnSetAlarm"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/shape_button_pill"
+            android:fontFamily="sans-serif-medium"
+            android:text="Set Alarm"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

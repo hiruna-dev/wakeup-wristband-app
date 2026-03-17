@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wristband App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            app: {
+              bg: '#F5F5F7',
+              purple: '#7B3EED',
+              purpleLight: '#F3E8FF',
+              purpleText: '#6B21A8',
+              coral: '#E65C4F',
+              textPrimary: '#1F2937',
+              textSecondary: '#6B7280',
+              textTertiary: '#9CA3AF'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F9FAFB] text-app-textPrimary font-sans antialiased h-screen flex flex-col overflow-hidden">
+<!-- BEGIN: Header area including status bar -->
+<header class="bg-[#F9FAFB] pt-2 pb-4 px-4 sticky top-0 z-10 flex-shrink-0">
+<!-- Status Bar Mockup -->
+<div class="flex justify-between items-center text-xs font-semibold mb-4 px-1">
+<div class="flex items-center gap-1">
+<i class="fa-solid fa-signal text-black"></i>
+<span>Verizon</span>
+</div>
+<span>9:02 AM</span>
+<div class="flex items-center gap-1">
+<span>100%</span>
+<i class="fa-solid fa-battery-full"></i>
+</div>
+</div>
+<!-- App Title -->
+<h1 class="text-center text-xl font-bold">Wristband App</h1>
+</header>
+<!-- END: Header area including status bar -->
+<!-- BEGIN: Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-4 pb-24 relative">
+<!-- Status Card -->
+<section class="bg-white rounded-2xl p-6 shadow-sm mb-4 flex items-center gap-6" data-purpose="status-card">
+<div class="relative w-24 h-24 flex items-center justify-center rounded-full bg-purple-50"><div class="absolute inset-0 rounded-full border-[10px] border-[#F6F0FF]"></div>
+<div class="absolute inset-3 rounded-full border-[2px] border-[#D6BCFF]"></div>
+<div class="absolute inset-3 rounded-full border-[3px] border-[#A074FF]" style="clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);"></div>
+<svg class="relative z-10 w-9 h-9" fill="none" stroke="#643BB0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="3" width="12" x="6" y="4"></rect><path d="M9 2v2"></path><path d="M15 2v2"></path><path d="M9 20v2"></path><path d="M15 20v2"></path><path d="M12 10v4"></path><path d="M12 14h2"></path></svg></div>
+<div>
+<h2 class="text-base font-bold mb-1">BLE Status:</h2>
+<p class="text-xl text-[#CD5C5C]">Disconnected</p>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="flex gap-4 mb-8" data-purpose="action-buttons">
+<button class="flex-1 bg-app-purple text-white py-4 px-4 rounded-xl flex items-center justify-center gap-2 font-semibold shadow-sm active:opacity-80 transition-opacity">
+<i class="fa-brands fa-bluetooth-b text-lg"></i>
+        Pair Device
+      </button>
+<div class="flex-1 bg-app-coral text-white py-3 px-4 rounded-xl flex items-center justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-triangle-exclamation text-lg"></i>
+<div class="leading-tight text-sm font-semibold text-left">
+            Emergency<br/>Alert
+          </div>
+</div>
+<!-- Toggle Switch Mockup -->
+<div class="w-10 h-6 bg-[#D65448] rounded-full relative ml-2 shadow-inner border border-white/20">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+</section>
+<!-- Saved Locations List -->
+<section data-purpose="saved-locations">
+<h3 class="text-xl font-bold mb-4">Saved Locations</h3>
+<div class="flex flex-col gap-4">
+<!-- Location Card 1 -->
+<article class="bg-white rounded-2xl p-4 shadow-sm flex gap-4 items-center relative">
+<div class="w-[70px] h-[70px] rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+<img alt="Map Thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUjDGYJo5EjYg35S0-oV0_IdpIBJnskDD07UoVM24srq1CJ3wH0p467aQRGFrawvNWlnfXgnzd3szQyriWddYr1W79Ttx51Kxv4-r8zELnvHRMJJFUtmc5uccfcnMjUYPOGNVqEFxeZ6awH6aaLRsWJiBXslwdI6J5HR12a084myeU4Zl71q67caF-OW2bP34mo_zFoElA-Yxfaa82ipXQKnmRf0nFZZjOx4NjkXvdq-9mKoXe_ZrUzhoKoCqoYRpuwD9g_K1j5_TQ"/>
+</div>
+<div class="flex-1"><div class="flex justify-between items-center"><h4 class="font-bold text-[16px] text-black leading-tight">Home</h4><i class="fa-solid fa-chevron-right text-gray-300 text-sm"></i></div>
+<p class="text-[14px] text-gray-700 mt-1 leading-tight">123 Main St, San Francisco, CA</p>
+<p class="text-[12px] text-gray-500 mt-0.5">Last visited: Today, 9:00 AM</p>
+<button class="mt-2 bg-[#F3EDFF] text-[#7448CD] text-[12px] font-semibold py-1 px-3 rounded-full flex items-center justify-center gap-1 w-fit">
+<i class="fa-solid fa-location-dot"></i> View on Map
+</button></div>
+</article>
+<!-- Location Card 2 -->
+<article class="bg-white rounded-2xl p-4 shadow-sm flex gap-4 items-center relative">
+<div class="w-[70px] h-[70px] rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+<img alt="Map Thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUjDGYJo5EjYg35S0-oV0_IdpIBJnskDD07UoVM24srq1CJ3wH0p467aQRGFrawvNWlnfXgnzd3szQyriWddYr1W79Ttx51Kxv4-r8zELnvHRMJJFUtmc5uccfcnMjUYPOGNVqEFxeZ6awH6aaLRsWJiBXslwdI6J5HR12a084myeU4Zl71q67caF-OW2bP34mo_zFoElA-Yxfaa82ipXQKnmRf0nFZZjOx4NjkXvdq-9mKoXe_ZrUzhoKoCqoYRpuwD9g_K1j5_TQ"/>
+</div>
+<div class="flex-1"><div class="flex justify-between items-center"><h4 class="font-bold text-[16px] text-black leading-tight">Location</h4><i class="fa-solid fa-chevron-right text-gray-300 text-sm"></i></div>
+<p class="text-[14px] text-gray-700 mt-1 leading-tight">1023 Main St, San Francisco, CA</p>
+<p class="text-[12px] text-gray-500 mt-0.5">Last visited: Today, 10:00 AM</p>
+<button class="mt-2 bg-[#F3EDFF] text-[#7448CD] text-[12px] font-semibold py-1 px-3 rounded-full flex items-center justify-center gap-1 w-fit">
+<i class="fa-solid fa-location-dot"></i> View on Map
+</button></div>
+</article>
+<!-- Location Card 3 -->
+<article class="bg-white rounded-2xl p-4 shadow-sm flex gap-4 items-center relative">
+<div class="w-[70px] h-[70px] rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+<img alt="Map Thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUjDGYJo5EjYg35S0-oV0_IdpIBJnskDD07UoVM24srq1CJ3wH0p467aQRGFrawvNWlnfXgnzd3szQyriWddYr1W79Ttx51Kxv4-r8zELnvHRMJJFUtmc5uccfcnMjUYPOGNVqEFxeZ6awH6aaLRsWJiBXslwdI6J5HR12a084myeU4Zl71q67caF-OW2bP34mo_zFoElA-Yxfaa82ipXQKnmRf0nFZZjOx4NjkXvdq-9mKoXe_ZrUzhoKoCqoYRpuwD9g_K1j5_TQ"/>
+</div>
+<div class="flex-1"><div class="flex justify-between items-center"><h4 class="font-bold text-[16px] text-black leading-tight">Location</h4><i class="fa-solid fa-chevron-right text-gray-300 text-sm"></i></div>
+<p class="text-[14px] text-gray-700 mt-1 leading-tight">156 Main St, San Francisco, CA</p>
+<p class="text-[12px] text-gray-500 mt-0.5">Last visited: Today, 2:00 PM</p>
+<button class="mt-2 bg-[#F3EDFF] text-[#7448CD] text-[12px] font-semibold py-1 px-3 rounded-full flex items-center justify-center gap-1 w-fit">
+<i class="fa-solid fa-location-dot"></i> View on Map
+</button></div>
+</article>
+</div>
+</section>
+<!-- Floating Action Button -->
+<button class="fixed bottom-[80px] right-[20px] w-16 h-16 bg-[#7B3EED] rounded-full shadow-lg flex flex-col items-center justify-center text-white z-20 active:scale-95 transition-transform" data-purpose="fab-alarm">
+<i class="fa-solid fa-bell text-xl mb-0.5"></i>
+<span class="text-[10px] font-semibold">Alarm</span>
+</button>
+</main>
+<!-- END: Main Scrollable Content -->
+<!-- BEGIN: Bottom Navigation -->
+<nav class="bg-white border-t border-gray-200 fixed bottom-0 w-full flex justify-around items-center pb-safe pt-2 h-16 flex-shrink-0 z-30" style="padding-bottom: env(safe-area-inset-bottom);"><button class="flex flex-col items-center justify-center w-1/3 text-[#7B3EED]">
+<i class="fa-solid fa-house text-xl mb-1"></i>
+<span class="text-[10px] font-semibold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-1/3 text-[#9CA3AF]">
+<i class="fa-solid fa-chart-simple text-xl mb-1"></i>
+<span class="text-[10px] font-semibold">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center w-1/3 text-[#9CA3AF]">
+<i class="fa-solid fa-gear text-xl mb-1"></i>
+<span class="text-[10px] font-semibold">Settings</span>
+</button></nav>
+<!-- END: Bottom Navigation -->
+</body></html>

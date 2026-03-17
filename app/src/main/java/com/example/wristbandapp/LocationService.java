@@ -29,7 +29,12 @@ public class LocationService extends Service {
     private DatabaseHelper databaseHelper;
     private BleManager bleManager;
     private boolean isLedOn = false;
-    private boolean isManualOverride = false;
+    private boolean isAlertSystemEnabled = true; // ON by default
+    private boolean isAlarmActive = false;
+
+    // Analytics tracking
+    private long currentEnteredLocationId = -1;
+    private long activeLocationLogId = -1;
 
     @Override
     public void onCreate() {
@@ -90,13 +95,42 @@ public class LocationService extends Service {
                 if (bleManager != null) {
                     broadcastBleStatus(bleManager.isConnected());
                 }
+            } else if ("ACTION_ENABLE_ALERT".equals(action)) {
+                Log.i(TAG, "Alert System ON.");
+                isAlertSystemEnabled = true;
+                // DO NOT call sendAlert() here! This is just a master toggle.
             } else if ("ACTION_TURN_OFF_LED".equals(action)) {
-                if (bleManager != null) {
-                    Log.i(TAG, "Manual Stop Triggered. Turning off LED.");
-                    bleManager.sendOffAlert();
+                Log.i(TAG, "Master Alert System disabled by user.");
+                isAlertSystemEnabled = false;
+
+                if (!isAlarmActive) {
+                    if (bleManager != null) bleManager.sendOffAlert();
                     isLedOn = false;
-                    isManualOverride = true;
                 }
+                isAlarmActive = false;
+            } else if ("ACTION_TRIGGER_ALARM".equals(action)) {
+                String label = intent.getStringExtra(AlarmScheduler.EXTRA_ALARM_LABEL);
+                Log.i(TAG, "Alarm triggered: " + label + ". Activating wristband buzzer.");
+                // When an alarm rings, it guarantees the buzzer stays on
+                isAlarmActive = true;
+                if (!isLedOn) {
+                    if (bleManager != null) bleManager.sendAlert();
+                    isLedOn = true;
+                }
+
+                // Auto-stop alarm after 20 seconds
+                new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
+                    Log.i(TAG, "Alarm auto-stop (20s).");
+                    isAlarmActive = false;
+                    if (bleManager != null) bleManager.sendOffAlert();
+                    isLedOn = false;
+                }, 20000); // 20 seconds
+
+            } else if ("ACTION_STOP_ALARM".equals(action)) {
+                Log.i(TAG, "Alarm stopped manually.");
+                isAlarmActive = false;
+                if (bleManager != null) bleManager.sendOffAlert();
+                isLedOn = false;
             }
         }
 
@@ -129,8 +163,12 @@ public class LocationService extends Service {
     };
 
     private void checkDistanceToLocations(Location currentLocation) {
+        // If an alarm is actively ringing, ignore GPS entirely
+        if (isAlarmActive) return;
+
         List<LocationItem> savedLocations = databaseHelper.getAllLocations();
-        boolean nearAny = false;
+        long newLocationId = -1;
+        String newLocationName = null;
 
         for (LocationItem item : savedLocations) {
             float[] results = new float[1];
@@ -139,27 +177,52 @@ public class LocationService extends Service {
                     item.latitude, item.longitude,
                     results);
 
-            float distanceInMeters = results[0];
-            Log.d(TAG, "Distance to " + item.name + ": " + distanceInMeters + "m");
-
-            if (distanceInMeters <= item.radiusMeters) {
-                nearAny = true;
-                if (!isLedOn && !isManualOverride) {
-                    Log.i(TAG, "Within radius of " + item.name + "! Triggering ESP32.");
-                    bleManager.sendAlert();
-                    isLedOn = true;
-                }
+            if (results[0] <= item.radiusMeters) {
+                newLocationId = item.id;
+                newLocationName = item.name;
                 break;
             }
         }
 
-        if (!nearAny) {
+        // Log Analytics (Independent of Buzzer status and Toggle status)
+        if (newLocationId != currentEnteredLocationId) {
+            if (currentEnteredLocationId != -1 && activeLocationLogId != -1) {
+                databaseHelper.logLocationExit(activeLocationLogId, System.currentTimeMillis());
+                activeLocationLogId = -1;
+            }
+            if (newLocationId != -1) {
+                activeLocationLogId = databaseHelper.logLocationEntry(newLocationId, newLocationName, System.currentTimeMillis());
+            }
+            currentEnteredLocationId = newLocationId;
+        }
+
+        boolean nearAny = (newLocationId != -1);
+
+        // If the Master Toggle is OFF, do not trigger the buzzer (but we still logged the analytics above!)
+        if (!isAlertSystemEnabled) {
+            // Ensure the buzzer turns off if they toggled it off while inside a zone
             if (isLedOn) {
-                Log.i(TAG, "Exited all radii or deleted target. Turning OFF ESP32.");
-                bleManager.sendOffAlert();
+                Log.i(TAG, "System Disabled. Turning OFF ESP32.");
+                if (bleManager != null) bleManager.sendOffAlert();
                 isLedOn = false;
             }
-            isManualOverride = false;
+            return;
+        }
+
+        if (nearAny) {
+            // We are inside a saved location's radius AND system is enabled
+            if (!isLedOn) {
+                Log.i(TAG, "Entered radius! Triggering ESP32.");
+                if (bleManager != null) bleManager.sendAlert();
+                isLedOn = true;
+            }
+        } else {
+            // We are NOT near any saved location.
+            if (isLedOn) {
+                Log.i(TAG, "Exited all radii. Turning OFF ESP32.");
+                if (bleManager != null) bleManager.sendOffAlert();
+                isLedOn = false;
+            }
         }
     }
 

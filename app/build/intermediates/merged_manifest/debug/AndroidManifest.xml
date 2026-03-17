@@ -20,6 +20,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -66,10 +69,19 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.wristbandapp.MapPickerActivity" />
+        <activity android:name="com.example.wristbandapp.AlarmActivity" />
+        <activity
+            android:name="com.example.wristbandapp.AnalyticsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WristbandApp" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBVMtaQsJJNjbEdfgg_-DJkc5ILfhjnSuM" />
+
+        <receiver
+            android:name="com.example.wristbandapp.AlarmReceiver"
+            android:exported="false" />
 
         <service
             android:name="com.example.wristbandapp.LocationService"

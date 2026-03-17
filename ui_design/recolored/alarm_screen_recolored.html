@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Set Wristband Alarm</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            appPink: '#FDEBEA',
+            appCoral: '#E8684A',
+            appCoralLight: '#f29b8c',
+            appCoralGlow: 'rgba(233, 109, 89, 0.4)'
+          },
+          fontFamily: {
+            sans: ['Nunito', 'Varela Round', 'sans-serif'],
+          },
+          boxShadow: {
+            'dial': '15px 15px 30px #ebd6d4, -15px -15px 30px #ffffff',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+    
+    body {
+      background-color: #FDEBEA;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Custom styles for the dial ring */
+    .dial-ring {
+      background: conic-gradient(from 0deg, #e96d59 0deg 210deg, transparent 210deg 360deg);
+      border-radius: 50%;
+      position: absolute;
+      inset: -4px;
+      z-index: 0;
+      opacity: 0.8;
+      filter: drop-shadow(0px 0px 10px rgba(240, 106, 81, 0.8));
+    }
+    
+    .dial-ring::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      background-color: #FDEBEA;
+      border-radius: 50%;
+      box-shadow: inset 5px 5px 10px rgba(0,0,0,0.03), inset -5px -5px 10px rgba(255,255,255,0.5);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen text-appCoral font-sans antialiased flex flex-col items-center pb-8 pt-4 px-6 relative">
+<!-- BEGIN: Header -->
+<header class="w-full max-w-md flex items-center justify-start py-4 sticky top-0 bg-appPink/90 backdrop-blur z-10">
+<button class="flex items-center text-appCoral text-lg font-medium active:opacity-70 transition-opacity">
+<svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+      Back
+    </button>
+<h1 class="text-xl font-semibold ml-4">Set Wristband Alarm</h1>
+</header>
+<!-- END: Header -->
+<main class="w-full max-w-md flex-1 flex flex-col items-center mt-6 w-full">
+<!-- BEGIN: Alarm Dial -->
+<div class="relative w-64 h-64 mb-12">
+<!-- Glow effect container -->
+<div class="absolute inset-0 rounded-full shadow-dial flex items-center justify-center bg-appPink z-10">
+<!-- The orange progress ring -->
+<div class="dial-ring" style="transform: rotate(0deg);"></div>
+<!-- Inner clock face -->
+<div class="absolute inset-4 rounded-full bg-appPink/80 backdrop-blur-sm z-20 flex flex-col items-center justify-center">
+<!-- Tick marks -->
+<svg class="absolute inset-0 w-full h-full text-appCoralLight/50" viewbox="0 0 100 100">
+<!-- 12 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="50" x2="50" y1="8" y2="14"></line>
+<!-- 1 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="71" x2="68" y1="13" y2="18"></line>
+<!-- 2 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="87" x2="82" y1="29" y2="32"></line>
+<!-- 3 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="92" x2="86" y1="50" y2="50"></line>
+<!-- 4 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="87" x2="82" y1="71" y2="68"></line>
+<!-- 5 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="71" x2="68" y1="87" y2="82"></line>
+<!-- 6 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="50" x2="50" y1="92" y2="86"></line>
+<!-- 7 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="29" x2="32" y1="87" y2="82"></line>
+<!-- 8 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="13" x2="18" y1="71" y2="68"></line>
+<!-- 9 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="8" x2="14" y1="50" y2="50"></line>
+<!-- 10 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="13" x2="18" y1="29" y2="32"></line>
+<!-- 11 o'clock -->
+<line stroke="currentColor" stroke-linecap="round" stroke-width="1.5" x1="29" x2="32" y1="13" y2="18"></line>
+</svg>
+<!-- Time Display -->
+<div class="flex items-baseline relative z-30">
+<span class="text-5xl font-normal tracking-tight">7:30</span>
+<span class="text-lg ml-1 font-medium">AM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Alarm Dial -->
+<!-- BEGIN: Settings Form -->
+<div class="w-full flex flex-col space-y-8">
+<!-- Repeat Section -->
+<div>
+<h2 class="text-lg font-medium mb-4 text-appCoral">Repeat</h2>
+<div class="flex justify-between w-full">
+<!-- Day Toggle: Sunday (Inactive) -->
+<button class="w-10 h-10 rounded-full border text-sm font-medium focus:outline-none flex items-center justify-center border-[rgba(232,104,74,0.25)] text-[rgba(232,104,74,0.3)]">S</button>
+<!-- Day Toggle: Monday (Active) -->
+<button class="w-10 h-10 rounded-full bg-appCoral text-white flex items-center justify-center text-sm font-medium shadow-md shadow-appCoral/30 focus:outline-none">M</button>
+<!-- Day Toggle: Tuesday (Inactive) -->
+<button class="w-10 h-10 rounded-full border text-sm font-medium focus:outline-none flex items-center justify-center border-[rgba(232,104,74,0.25)] text-[rgba(232,104,74,0.3)]">T</button>
+<!-- Day Toggle: Wednesday (Active) -->
+<button class="w-10 h-10 rounded-full bg-appCoral text-white flex items-center justify-center text-sm font-medium shadow-md shadow-appCoral/30 focus:outline-none">W</button>
+<!-- Day Toggle: Thursday (Inactive) -->
+<button class="w-10 h-10 rounded-full border text-sm font-medium focus:outline-none flex items-center justify-center border-[rgba(232,104,74,0.25)] text-[rgba(232,104,74,0.3)]">T</button>
+<!-- Day Toggle: Friday (Active) -->
+<button class="w-10 h-10 rounded-full bg-appCoral text-white flex items-center justify-center text-sm font-medium shadow-md shadow-appCoral/30 focus:outline-none">F</button>
+<!-- Day Toggle: Saturday (Inactive) -->
+<button class="w-10 h-10 rounded-full border text-sm font-medium focus:outline-none flex items-center justify-center border-[rgba(232,104,74,0.25)] text-[rgba(232,104,74,0.3)]">S</button>
+</div>
+</div>
+<!-- Vibration Intensity Section -->
+<div>
+<h2 class="text-lg font-medium mb-4 text-appCoral">Vibration Intensity</h2>
+<div class="flex border border-[rgba(232,104,74,0.5)] rounded-xl overflow-hidden shadow-sm h-12">
+<!-- Low -->
+<button class="flex-1 text-appCoral bg-transparent hover:bg-appCoral/5 font-medium transition-colors focus:outline-none border-r border-[rgba(232,104,74,0.5)]">
+            Low
+          </button>
+<!-- Medium (Active) -->
+<button class="flex-1 bg-appCoral text-white font-medium focus:outline-none">
+            Medium
+          </button>
+<!-- High -->
+<button class="flex-1 text-appCoral bg-transparent hover:bg-appCoral/5 font-medium transition-colors focus:outline-none border-l border-[rgba(232,104,74,0.5)]">
+            High
+          </button>
+</div>
+</div>
+<!-- Alarm Label Input -->
+<div class="relative">
+<input class="w-full bg-transparent border border-[rgba(232,104,74,0.5)] rounded-xl px-4 py-4 text-appCoral placeholder-[rgba(232,104,74,0.5)] focus:outline-none focus:ring-2 focus:ring-appCoral/50 shadow-sm pr-12" placeholder="Alarm Label (optional)" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-appCoral">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- END: Settings Form -->
+<div class="flex-1"></div> <!-- Spacer to push button to bottom -->
+<!-- BEGIN: Set Alarm Button -->
+<button class="w-full mt-10 bg-appCoral text-white text-xl font-medium py-4 rounded-2xl shadow-lg shadow-appCoral/40 active:scale-[0.98] transition-transform focus:outline-none">
+      Set Alarm
+    </button>
+<!-- END: Set Alarm Button -->
+</main>
+</body></html>

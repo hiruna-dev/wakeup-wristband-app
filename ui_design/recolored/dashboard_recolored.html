@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wristband App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<style data-purpose="custom-colors">
+    :root {
+      --bg-gradient: linear-gradient(180deg, #FDEAEA 0%, #FAD7D7 100%);
+      --text-burgundy: #4A152A;
+      --accent-orange: #FF7E46;
+      --card-bg: rgba(255, 255, 255, 0.6);
+      --card-bg-solid: #FFFFFF;
+    }
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-burgundy);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .text-burgundy { color: var(--text-burgundy); }
+    .bg-orange { background-color: var(--accent-orange); }
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .solid-card {
+      background: var(--card-bg-solid);
+    }
+    
+    /* Toggle switch custom style */
+    .toggle-checkbox:checked {
+      right: 0;
+      border-color: #68D391;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+      background-color: #68D391;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="relative pb-20">
+<!-- BEGIN: StatusBar -->
+<div class="flex justify-between items-center px-5 py-2 text-xs font-semibold">
+<div class="flex items-center gap-1">
+<span class="material-icons text-sm">signal_cellular_alt</span>
+<span>Verizon</span>
+</div>
+<span>9:02 AM</span>
+<div class="flex items-center gap-1">
+<span>100%</span>
+<span class="material-icons text-sm">battery_full</span>
+</div>
+</div>
+<!-- END: StatusBar -->
+<!-- BEGIN: MainContent -->
+<main class="px-4 pt-4 pb-24 flex-1 overflow-y-auto">
+<!-- Header -->
+<h1 class="text-2xl text-center mb-6 text-[#4A1525] font-extrabold">Wristband App</h1>
+<!-- BEGIN: StatusCard -->
+<div class="glass-card rounded-2xl p-4 mb-6 flex items-center shadow-sm">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center mr-4">
+<div class="absolute inset-0 border-4 border-[#DCA8A8] rounded-full opacity-30"></div>
+<div class="absolute inset-0 border-4 border-t-transparent border-r-transparent border-b-[#7A364F] border-l-[#7A364F] rounded-full transform -rotate-45"></div>
+<div class="bg-[#F3E5E5] w-12 h-12 rounded-full flex items-center justify-center z-10">
+<span class="material-icons-outlined text-2xl text-[#7A364F]">watch</span>
+</div>
+</div>
+<div>
+<h2 class="text-base font-semibold text-burgundy">BLE Status:</h2>
+<p class="text-xl text-[#7A364F]">Disconnected</p>
+</div>
+</div>
+<!-- END: StatusCard -->
+<!-- BEGIN: ActionButtons -->
+<div class="flex gap-4 mb-8">
+<button class="bg-gradient-to-br from-[#FF8A50] to-[#F15A24] text-white rounded-xl py-4 flex-1 flex flex-row items-center justify-center gap-2 shadow-md font-semibold">
+<span class="material-icons">bluetooth</span>
+        Pair Device
+      </button>
+<div class="bg-gradient-to-br from-[#FF8A50] to-[#F15A24] text-white rounded-xl py-3 px-4 flex-1 flex items-center justify-between shadow-md">
+<div class="flex items-center gap-2"><span class="material-icons">warning</span><div class="font-semibold leading-tight text-sm text-left flex flex-col"><span>Emergency</span><span>Alert</span></div></div>
+<!-- Toggle -->
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out left-0 top-0.5" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-[#E56E3B] cursor-pointer" for="toggle"></label>
+</div>
+</div>
+</div>
+<!-- END: ActionButtons -->
+<!-- BEGIN: SavedLocationsSection -->
+<h2 class="text-xl font-bold mb-4 text-[#4A1525]">Saved Locations</h2>
+<div class="space-y-4">
+<!-- Location Card 1 -->
+<div class="glass-card rounded-2xl p-4 flex gap-4 shadow-sm relative">
+<span class="material-icons absolute top-4 right-4 text-gray-400">chevron_right</span>
+<div class="w-14 h-14 bg-white rounded-lg flex-shrink-0 overflow-hidden p-1 shadow-inner flex items-center justify-center"><div class="w-full h-full bg-[#F3EFE9] rounded flex items-center justify-center"><span class="material-icons text-[#E55B5B] text-lg">place</span></div></div>
+<div class="flex-1">
+<h3 class="font-bold text-lg mb-1 text-[#4A1525]">Home</h3>
+<p class="text-sm mb-1 leading-tight text-[#4A1525]/80">123 Main St, San Francisco, CA</p>
+<p class="text-xs mb-2 text-[#4A1525]/70">Last visited: Today, 9:00 AM</p>
+<button class="bg-[#F0E6E6] text-xs font-semibold py-1.5 px-3 rounded-full flex items-center gap-1 w-max text-[#4A1525]">
+<span class="material-icons text-sm text-[#4A1525]">location_on</span> View on Map
+          </button>
+</div>
+</div>
+<!-- Location Card 2 -->
+<div class="glass-card rounded-2xl p-4 flex gap-4 shadow-sm relative">
+<span class="material-icons absolute top-4 right-4 text-gray-400">chevron_right</span>
+<div class="w-14 h-14 bg-white rounded-lg flex-shrink-0 overflow-hidden p-1 shadow-inner flex items-center justify-center"><div class="w-full h-full bg-[#F3EFE9] rounded flex items-center justify-center"><span class="material-icons text-[#E55B5B] text-lg">place</span></div></div>
+<div class="flex-1">
+<h3 class="font-bold text-lg mb-1 text-[#4A1525]">Location</h3>
+<p class="text-sm mb-1 leading-tight text-[#4A1525]/80">1023 Main St, San Francisco, CA</p>
+<p class="text-xs mb-2 text-[#4A1525]/70">Last visited: Today, 10:00 AM</p>
+<button class="bg-[#F0E6E6] text-xs font-semibold py-1.5 px-3 rounded-full flex items-center gap-1 w-max text-[#4A1525]">
+<span class="material-icons text-sm text-[#4A1525]">location_on</span> View on Map
+          </button>
+</div>
+</div>
+<!-- Location Card 3 -->
+<div class="glass-card rounded-2xl p-4 flex gap-4 shadow-sm relative">
+<span class="material-icons absolute top-4 right-4 text-gray-400">chevron_right</span>
+<div class="w-14 h-14 bg-white rounded-lg flex-shrink-0 overflow-hidden p-1 shadow-inner flex items-center justify-center"><div class="w-full h-full bg-[#F3EFE9] rounded flex items-center justify-center"><span class="material-icons text-[#E55B5B] text-lg">place</span></div></div>
+<div class="flex-1">
+<h3 class="font-bold text-lg mb-1 text-[#4A1525]">Location</h3>
+<p class="text-sm mb-1 leading-tight text-[#4A1525]/80">156 Main St, San Francisco, CA</p>
+<p class="text-xs mb-2 text-[#4A1525]/70">Last visited: Today, 2:00 PM</p>
+<button class="bg-[#F0E6E6] text-xs font-semibold py-1.5 px-3 rounded-full flex items-center gap-1 w-max text-[#4A1525]">
+<span class="material-icons text-sm text-[#4A1525]">location_on</span> View on Map
+          </button>
+</div>
+</div>
+</div>
+<!-- END: SavedLocationsSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: FAB -->
+<button class="bg-gradient-to-br from-[#FF8A50] to-[#F15A24] text-white rounded-xl py-4 flex-1 flex flex-row items-center justify-center gap-2 shadow-md font-semibold">
+<span class="material-icons mb-0.5">notifications</span>
+<span class="text-[10px] font-semibold">Alarm</span>
+</button>
+<!-- END: FAB -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="fixed bottom-0 w-full bg-white border-t border-gray-200 py-3 px-6 flex justify-between items-center z-40 pb-6 rounded-t-3xl">
+<a class="flex flex-col items-center text-[#4A1525]" href="#">
+<span class="material-icons">home</span>
+<span class="text-xs font-semibold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center text-[#4A1525]" href="#">
+<span class="material-icons">bar_chart</span>
+<span class="text-xs font-semibold mt-1 text-[#4A1525]">Analytics</span>
+</a>
+<a class="flex flex-col items-center text-[#4A1525]" href="#">
+<span class="material-icons">settings</span>
+<span class="text-xs font-semibold mt-1 text-[#4A1525]">Settings</span>
+</a>
+</nav>
+<!-- END: BottomNavigation -->
+</body></html>

@@ -1,8 +1,11 @@
 package com.example.wristbandapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -46,6 +49,14 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
                 deleteClickListener.onDeleteClick(item);
             }
         });
+        // "View on Map" opens MapPickerActivity
+        if (holder.btnViewMap != null) {
+            holder.btnViewMap.setOnClickListener(v -> {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, MapPickerActivity.class);
+                context.startActivity(intent);
+            });
+        }
     }
 
     @Override
@@ -56,6 +67,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvCoords, tvRadius;
         ImageButton btnDelete;
+        Button btnViewMap;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,6 +75,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
             tvCoords = itemView.findViewById(R.id.tvCoords);
             tvRadius = itemView.findViewById(R.id.tvRadius);
             btnDelete = itemView.findViewById(R.id.btnDelete);
+            btnViewMap = itemView.findViewById(R.id.btnViewMap);
         }
     }
 }

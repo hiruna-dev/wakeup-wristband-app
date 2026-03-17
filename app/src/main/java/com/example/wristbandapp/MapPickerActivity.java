@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.slider.Slider;
 
 import java.util.Arrays;
 
@@ -61,6 +63,22 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         }
 
         setupAutocomplete();
+
+        // Bottom nav: Home goes back to MainActivity
+        View navHome = findViewById(R.id.navHome);
+        if (navHome != null) {
+            navHome.setOnClickListener(v -> {
+                startActivity(new Intent(this, MainActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            });
+        }
+
+        View navAnalytics = findViewById(R.id.navAnalytics);
+        if (navAnalytics != null) {
+            navAnalytics.setOnClickListener(v -> {
+                startActivity(new Intent(this, AnalyticsActivity.class));
+            });
+        }
     }
 
     private void setupAutocomplete() {
@@ -94,6 +112,23 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         mMap = googleMap;
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
+        // If opened from "View on Map", zoom straight to that location
+        Intent incoming = getIntent();
+        if (incoming.hasExtra("focusLat") && incoming.hasExtra("focusLng")) {
+            double lat = incoming.getDoubleExtra("focusLat", 0);
+            double lng = incoming.getDoubleExtra("focusLng", 0);
+            String name = incoming.getStringExtra("focusName");
+            LatLng focus = new LatLng(lat, lng);
+            selectedLocation = focus;
+            selectedPlaceName = name != null ? name : "Saved Location";
+            updateMapMarker(focus, selectedPlaceName);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(focus, 15f));
+        } else {
+            // Default: start centred on Sri Lanka
+            LatLng sriLanka = new LatLng(7.8731, 80.7718);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sriLanka, 7f));
+        }
+
         mMap.setOnMapClickListener(latLng -> {
             selectedLocation = latLng;
             selectedPlaceName = "Custom Location";
@@ -114,32 +149,33 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_save_location, null);
         EditText etName = view.findViewById(R.id.etName);
-        EditText etRadius = view.findViewById(R.id.etRadius);
+        Slider sliderRadius = view.findViewById(R.id.sliderRadius);
+        TextView tvRadiusLabel = view.findViewById(R.id.tvRadiusLabel);
 
         etName.setText(selectedPlaceName);
+
+        // Update label when slider moves
+        sliderRadius.addOnChangeListener((slider, value, fromUser) -> {
+            tvRadiusLabel.setText("Radius: " + (int) value + "m");
+        });
 
         builder.setView(view);
         builder.setPositiveButton("Save", (dialog, which) -> {
             String name = etName.getText().toString();
-            String radiusStr = etRadius.getText().toString();
+            float radius = sliderRadius.getValue();
 
-            if (name.isEmpty() || radiusStr.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            if (name.isEmpty()) {
+                Toast.makeText(this, "Please enter a location name", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            try {
-                float radius = Float.parseFloat(radiusStr);
-                Intent returnIntent = new Intent();
-                returnIntent.putExtra("name", name);
-                returnIntent.putExtra("lat", selectedLocation.latitude);
-                returnIntent.putExtra("lng", selectedLocation.longitude);
-                returnIntent.putExtra("radius", radius);
-                setResult(RESULT_OK, returnIntent);
-                finish();
-            } catch (NumberFormatException e) {
-                Toast.makeText(this, "Invalid radius", Toast.LENGTH_SHORT).show();
-            }
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("name", name);
+            returnIntent.putExtra("lat", selectedLocation.latitude);
+            returnIntent.putExtra("lng", selectedLocation.longitude);
+            returnIntent.putExtra("radius", radius);
+            setResult(RESULT_OK, returnIntent);
+            finish();
         });
         builder.setNegativeButton("Cancel", null);
         builder.show();

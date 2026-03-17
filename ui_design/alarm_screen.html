@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Set Wristband Alarm</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#712B9A',
+              light: '#8B42B4',
+            },
+            gray: {
+              300: '#E5E7EB',
+              400: '#9CA3AF',
+              800: '#1F2937',
+            }
+          },
+          boxShadow: {
+            'custom': '0 4px 14px 0 rgba(113, 43, 154, 0.2)',
+            'clock': '0 10px 30px -10px rgba(0, 0, 0, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<style data-purpose="custom-utilities">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Clock specific styles for precise positioning if needed, though mostly tailwind */
+    .clock-hand-hour {
+      transform-origin: bottom center;
+      transform: rotate(210deg); /* Approx 7:30 */
+    }
+    .clock-hand-minute {
+      transform-origin: bottom center;
+      transform: rotate(180deg); /* Approx 30 mins */
+    }
+    .clock-arc {
+      stroke-dasharray: 283; /* 2 * pi * r (r=45ish) */
+      stroke-dashoffset: 100; /* Adjust for desired arc length */
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-50 flex justify-center min-h-screen">
+<!-- Mobile Container -->
+<div class="w-full max-w-md bg-white min-h-screen shadow-lg relative flex flex-col">
+<!-- BEGIN: Top Navigation -->
+<header class="relative flex items-center justify-center px-4 py-4 border-b border-gray-200">
+<button aria-label="Go back" class="absolute left-4 flex items-center text-primary font-medium text-xl focus:outline-none">
+<i class="fas fa-chevron-left mr-2 text-2xl"></i> <span class="mt-0.5">Back</span>
+</button>
+<h1 class="text-xl font-bold text-black whitespace-nowrap">Set Wristband Alarm</h1>
+</header>
+<!-- END: Top Navigation -->
+<!-- BEGIN: Main Content -->
+<main class="flex-grow flex flex-col items-center pt-8 pb-6 px-6 overflow-y-auto">
+<!-- BEGIN: Clock Face -->
+<section class="relative w-64 h-64 mb-10 rounded-full bg-white shadow-clock flex items-center justify-center p-4">
+<!-- Outer Track & Progress Ring (SVG) -->
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle cx="50" cy="50" fill="transparent" r="46" stroke="#E5E7EB" stroke-width="4"></circle>
+<!-- Purple Progress Arc -->
+<circle class="clock-arc" cx="50" cy="50" fill="transparent" r="46" stroke="#712B9A" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<!-- Inner Clock Dial -->
+<div class="relative w-full h-full rounded-full border border-gray-100 flex items-center justify-center bg-gray-50/30">
+<!-- Tick Marks (Simplified representation) -->
+<div class="absolute inset-2">
+<div class="w-full h-full relative">
+<div class="absolute top-0 left-1/2 w-0.5 h-2 bg-gray-300 transform -translate-x-1/2"></div>
+<div class="absolute bottom-0 left-1/2 w-0.5 h-2 bg-gray-300 transform -translate-x-1/2"></div>
+<div class="absolute left-0 top-1/2 w-2 h-0.5 bg-gray-300 transform -translate-y-1/2"></div>
+<div class="absolute right-0 top-1/2 w-2 h-0.5 bg-gray-300 transform -translate-y-1/2"></div>
+<!-- Add more ticks as needed, simplified here -->
+</div>
+</div>
+<!-- Hands -->
+<div class="relative w-full h-full z-10">
+<!-- Hour Hand -->
+<div class="absolute bottom-1/2 left-1/2 w-1.5 h-16 bg-primary rounded-full clock-hand-hour -ml-[3px] mb-[3px]"></div>
+<!-- Minute Hand -->
+<div class="absolute bottom-1/2 left-1/2 w-1 h-20 bg-primary rounded-full clock-hand-minute -ml-[2px] mb-[3px]"></div>
+<!-- Center Dot -->
+<div class="absolute top-1/2 left-1/2 w-5 h-5 bg-white border-[5px] border-primary rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20 shadow-sm"></div>
+</div>
+<!-- Digital Time Display -->
+<div class="absolute top-[55%] left-1/2 transform -translate-x-1/2 flex items-start z-20">
+<span class="text-5xl font-light text-gray-900 tracking-tight leading-none">7:30</span>
+<span class="text-base font-medium text-gray-900 ml-1 mt-1">AM</span>
+</div>
+</div>
+</section>
+<!-- END: Clock Face -->
+<div class="w-full space-y-6">
+<!-- BEGIN: Repeat Section -->
+<section>
+<h2 class="text-black text-base mt-2 mb-3">Repeat</h2>
+<div class="flex justify-between items-center w-full">
+<button class="w-9 h-9 rounded-full border border-primary flex items-center justify-center text-gray-300 font-medium focus:outline-none">S</button>
+<button class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-medium focus:outline-none">M</button>
+<button class="w-9 h-9 rounded-full border border-primary flex items-center justify-center text-gray-300 font-medium focus:outline-none">T</button>
+<button class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-medium focus:outline-none">W</button>
+<button class="w-9 h-9 rounded-full border border-primary flex items-center justify-center text-gray-300 font-medium focus:outline-none">T</button>
+<button class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-medium focus:outline-none">F</button>
+<button class="w-9 h-9 rounded-full border border-primary flex items-center justify-center text-gray-300 font-medium focus:outline-none">S</button>
+</div>
+</section>
+<!-- END: Repeat Section -->
+<!-- BEGIN: Vibration Intensity Section -->
+<section>
+<h2 class="text-black text-base mt-6 mb-3">Vibration Intensity</h2>
+<div class="flex w-full rounded-lg border border-primary overflow-hidden">
+<button class="flex-1 py-3 text-center text-primary font-medium focus:outline-none hover:bg-gray-50 transition-colors border-r border-primary">Low</button>
+<button class="flex-1 py-3 text-center bg-primary text-white font-medium focus:outline-none">Medium</button>
+<button class="flex-1 py-3 text-center text-primary font-medium focus:outline-none hover:bg-gray-50 transition-colors border-l border-primary">High</button>
+</div>
+</section>
+<!-- END: Vibration Intensity Section -->
+<!-- BEGIN: Alarm Label Input -->
+<section class="pt-2">
+<div class="relative">
+<input class="w-full pl-4 pr-10 py-3.5 rounded-lg border border-primary text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base" placeholder="Alarm Label (optional)" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-primary">
+<i class="fas fa-pencil-alt text-lg"></i>
+</div>
+</div>
+</section>
+<!-- END: Alarm Label Input -->
+</div>
+<!-- Spacer to push button to bottom if content is short -->
+<div class="flex-grow"></div>
+</main>
+<!-- END: Main Content -->
+<!-- BEGIN: Bottom Fixed Button -->
+<div class="p-6 bg-white w-full pb-8">
+<button class="w-full bg-primary text-white text-xl py-4 rounded-3xl font-medium shadow-lg shadow-gray-400/50 focus:outline-none hover:bg-primary-light transition-colors active:scale-[0.98]">
+        Set Alarm
+      </button>
+</div>
+<!-- END: Bottom Fixed Button -->
+</div>
+</body></html>

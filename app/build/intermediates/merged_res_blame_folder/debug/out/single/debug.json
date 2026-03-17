@@ -1,34 +1,178 @@
 [
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/layout_dialog_add_location.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/layout/dialog_add_location.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/layout_item_location.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/layout/item_location.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_circle_ble_bg.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_circle_ble_bg.xml"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/layout_activity_map_picker.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/layout/activity_map_picker.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_pencil.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_pencil.xml"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_bg_bottom_nav.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\bg_bottom_nav.xml"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/layout_dialog_save_location.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/layout/dialog_save_location.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\font_title.ttf.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\font\\title.ttf"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_chevron_right.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_chevron_right.xml"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_item_location.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\item_location.xml"
     },
     {
-        "merged": "com.example.wristbandapp-merged_res-4:/layout_activity_main.xml.flat",
-        "source": "com.example.wristbandapp-main-6:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_chart.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_chart.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_bluetooth.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_bluetooth.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_dialog_add_location.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\dialog_add_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_chip_bg.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_chip_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_map_picker.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_map_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_item_analytics_row.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\item_analytics_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_my_location.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_my_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_item_alarm.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\item_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_alert.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_alert.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_clock_hand_thick.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_clock_hand_thick.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_clock_center_dot.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_clock_center_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_segment_selected.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_segment_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.wristbandapp-merged_res-4:/layout_activity_settings.xml.flat",
+        "source": "com.example.wristbandapp-main-6:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_chevron_left.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_chevron_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_clock_hand_thin.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_clock_hand_thin.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_map.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_card_bg.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_card_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_clock_bg.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_clock_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_button_pill.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_button_pill.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_bell.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_bell.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_alarm.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_segment_outline.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_segment_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_wristband.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_wristband.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_thumb_bg.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_thumb_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_bg_screen_gradient.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\bg_screen_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_circle_outline.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_circle_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_location_pin.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_location_pin.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\font_subtitle.otf.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\font\\subtitle.otf"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_analytics.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_analytics.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_dialog_save_location.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\dialog_save_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_circle_filled.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_circle_filled.xml"
     }
 ]

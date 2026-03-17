@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand palette from UI design (Recolored) -->
+    <color name="burgundy_text">#4A152A</color>
+    <color name="burgundy_faded">#7A364F</color>
+    <color name="orange_gradient_start">#FF8A50</color>
+    <color name="orange_gradient_end">#F15A24</color>
+    <color name="orange_toggle">#E56E3B</color>
+    <color name="orange_toggle_on">#68D391</color>
+    
+    <!-- Background colors -->
+    <color name="bg_gradient_start">#FDEAEA</color>
+    <color name="bg_gradient_end">#FAD7D7</color>
+    <color name="bg_card_glass">#99FFFFFF</color> <!-- 60% opacity white -->
+    <color name="bg_card_solid">#FFFFFF</color>
+
+    <color name="location_icon_bg">#F3EFE9</color>
+    <color name="location_icon_tint">#E55B5B</color>
+
+    <!-- Legacy / compatibility values overwritten specifically for the WristbandApp theme -->
+    <color name="purple_primary">#F15A24</color>
+    <color name="purple_dark">#FF8A50</color>
+    <color name="purple_medium">#FF7E46</color>
+    <color name="purple_light">#FDEAEA</color>
+    <color name="bg_screen">#FAD7D7</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="text_primary">#4A152A</color>
+    <color name="text_secondary">#7A364F</color>
+    <color name="text_tertiary">#DCA8A8</color>
+    <color name="coral">#E56E3B</color>
+    <color name="coral_dark">#F15A24</color>
+
+    <!-- Legacy / compat -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

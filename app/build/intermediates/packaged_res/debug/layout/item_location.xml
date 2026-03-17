@@ -1,63 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  item_location.xml  –  Location list card
+  Matches: dashboard.html location cards
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/bg_card">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp">
 
+        <!-- Location icon circle -->
+        <FrameLayout
+            android:id="@+id/viewMapThumb"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_circle_ble_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_location_pin"
+                app:tint="@color/purple_dark"
+                android:contentDescription="Location" />
+        </FrameLayout>
+
+        <!-- Location Name -->
         <TextView
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Location Name"
-            android:textSize="18sp"
+            android:layout_marginStart="14dp"
+            android:text="Home"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnDelete" />
+            app:layout_constraintStart_toEndOf="@id/viewMapThumb"
+            app:layout_constraintEnd_toStartOf="@id/ivChevron"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Chevron -->
+        <ImageView
+            android:id="@+id/ivChevron"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/text_tertiary"
+            android:contentDescription=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvName"
+            app:layout_constraintBottom_toBottomOf="@id/tvName" />
+
+        <!-- Coords -->
         <TextView
             android:id="@+id/tvCoords"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Lat: 0.0, Lng: 0.0"
-            android:textSize="14sp"
+            android:layout_marginStart="14dp"
             android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@id/tvName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnDelete" />
+            android:text="Lat: 0.0, Lng: 0.0"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/viewMapThumb"
+            app:layout_constraintEnd_toStartOf="@id/ivChevron"
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
 
+        <!-- Radius -->
         <TextView
             android:id="@+id/tvRadius"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
             android:text="Radius: 50m"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@id/tvCoords"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnDelete" />
+            android:textColor="@color/text_tertiary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/viewMapThumb"
+            app:layout_constraintEnd_toStartOf="@id/ivChevron"
+            app:layout_constraintTop_toBottomOf="@id/tvCoords" />
 
+        <!-- "View on Map" chip button -->
+        <Button
+            android:id="@+id/btnViewMap"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_chip_bg"
+            android:drawableStart="@drawable/ic_location_pin"
+            android:drawablePadding="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingHorizontal="12dp"
+            android:text="View on Map"
+            android:textColor="@color/purple_dark"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/viewMapThumb"
+            app:layout_constraintTop_toBottomOf="@id/tvRadius"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Delete button (top-right, subtle) -->
         <ImageButton
             android:id="@+id/btnDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:src="@android:drawable/ic_menu_delete"
             android:background="?selectableItemBackgroundBorderless"
-            android:tint="@color/purple_700"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:tint="@color/text_tertiary"
+            android:contentDescription="Delete"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="Delete" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
