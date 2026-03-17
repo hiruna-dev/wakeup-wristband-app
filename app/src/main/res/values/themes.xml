@@ -59,6 +59,26 @@
         <item name="colorAppAlertDark">@color/deep_purple_dark</item>
     </style>
 
+    <style name="Theme.WristbandApp.Blue" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue_primary</item>
+        <item name="colorPrimaryVariant">@color/blue_dark</item>
+        <item name="colorSecondary">@color/blue_medium</item>
+        <item name="colorAccent">@color/blue_primary</item>
+        <item name="android:windowBackground">@color/bg_screen_blue</item>
+        <item name="android:statusBarColor">@color/bg_screen_blue</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <!-- Custom Attributes Mapping (Blue Theme) -->
+        <item name="colorAppPrimary">@color/blue_primary</item>
+        <item name="colorAppPrimaryDark">@color/blue_dark</item>
+        <item name="colorAppPrimaryLight">@color/blue_medium</item>
+        <item name="colorAppBackgroundStart">#EFF6FF</item>
+        <item name="colorAppBackgroundEnd">#DBEAFE</item>
+        <item name="colorAppCard">#B3FFFFFF</item>
+        <item name="colorAppAlert">@color/blue_medium</item>
+        <item name="colorAppAlertDark">@color/blue_dark</item>
+    </style>
+
     <style name="Theme.WristbandApp.Alarm" parent="Theme.WristbandApp">
         <item name="android:windowBackground">@color/white</item>
     </style>

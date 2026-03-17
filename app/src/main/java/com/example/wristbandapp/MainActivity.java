@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
             setTheme(R.style.Theme_WristbandApp_Teal);
         } else if ("purple".equals(savedTheme)) {
             setTheme(R.style.Theme_WristbandApp_Purple);
+        } else if ("blue".equals(savedTheme)) {
+            setTheme(R.style.Theme_WristbandApp_Blue);
         }
 
         super.onCreate(savedInstanceState);

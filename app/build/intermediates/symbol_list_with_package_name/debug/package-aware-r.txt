@@ -1399,9 +1399,15 @@ color bg_card_solid
 color bg_gradient_end
 color bg_gradient_start
 color bg_screen
+color bg_screen_blue
 color bg_screen_purple
 color bg_screen_teal
 color black
+color blue_dark
+color blue_medium
+color blue_primary
+color blue_text_primary
+color blue_text_tertiary
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -3698,6 +3704,7 @@ id btnConnect
 id btnDelete
 id btnSetAlarm
 id btnTest
+id btnThemeBlue
 id btnThemeOrange
 id btnThemePurple
 id btnThemeTeal
@@ -5214,6 +5221,7 @@ style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_WristbandApp
 style Theme_WristbandApp_Alarm
+style Theme_WristbandApp_Blue
 style Theme_WristbandApp_Purple
 style Theme_WristbandApp_Teal
 style ThemeOverlay_AppCompat

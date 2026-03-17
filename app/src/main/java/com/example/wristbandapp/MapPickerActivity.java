@@ -42,6 +42,7 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         String savedTheme = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("app_theme", "orange");
         if ("teal".equals(savedTheme)) setTheme(R.style.Theme_WristbandApp_Teal);
         else if ("purple".equals(savedTheme)) setTheme(R.style.Theme_WristbandApp_Purple);
+        else if ("blue".equals(savedTheme)) setTheme(R.style.Theme_WristbandApp_Blue);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_picker);

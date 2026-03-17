@@ -14,9 +14,15 @@ color bg_card_solid
 color bg_gradient_end
 color bg_gradient_start
 color bg_screen
+color bg_screen_blue
 color bg_screen_purple
 color bg_screen_teal
 color black
+color blue_dark
+color blue_medium
+color blue_primary
+color blue_text_primary
+color blue_text_tertiary
 color burgundy_faded
 color burgundy_text
 color coral
@@ -89,6 +95,7 @@ id btnConnect
 id btnDelete
 id btnSetAlarm
 id btnTest
+id btnThemeBlue
 id btnThemeOrange
 id btnThemePurple
 id btnThemeTeal
@@ -167,5 +174,6 @@ mipmap ic_launcher_round
 string app_name
 style Theme.WristbandApp
 style Theme.WristbandApp.Alarm
+style Theme.WristbandApp.Blue
 style Theme.WristbandApp.Purple
 style Theme.WristbandApp.Teal

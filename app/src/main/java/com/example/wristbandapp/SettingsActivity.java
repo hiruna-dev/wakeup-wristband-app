@@ -32,6 +32,8 @@ public class SettingsActivity extends AppCompatActivity {
             setTheme(R.style.Theme_WristbandApp_Teal);
         } else if ("purple".equals(savedTheme)) {
             setTheme(R.style.Theme_WristbandApp_Purple);
+        } else if ("blue".equals(savedTheme)) {
+            setTheme(R.style.Theme_WristbandApp_Blue);
         }
 
         super.onCreate(savedInstanceState);
@@ -103,11 +105,13 @@ public class SettingsActivity extends AppCompatActivity {
         View btnOrange = findViewById(R.id.btnThemeOrange);
         View btnTeal   = findViewById(R.id.btnThemeTeal);
         View btnPurple = findViewById(R.id.btnThemePurple);
+        View btnBlue   = findViewById(R.id.btnThemeBlue);
 
         // Highlight active theme with a border/elevation boost
         View activeView;
         if ("teal".equals(currentTheme)) activeView = btnTeal;
         else if ("purple".equals(currentTheme)) activeView = btnPurple;
+        else if ("blue".equals(currentTheme)) activeView = btnBlue;
         else activeView = btnOrange;
 
         activeView.setElevation(8f);
@@ -119,6 +123,7 @@ public class SettingsActivity extends AppCompatActivity {
         btnOrange.setOnClickListener(v -> applyTheme("orange"));
         btnTeal.setOnClickListener(v   -> applyTheme("teal"));
         btnPurple.setOnClickListener(v -> applyTheme("purple"));
+        btnBlue.setOnClickListener(v   -> applyTheme("blue"));
     }
 
     private void applyTheme(String theme) {
@@ -128,9 +133,10 @@ public class SettingsActivity extends AppCompatActivity {
         }
         prefs.edit().putString("app_theme", theme).apply();
         // Restart app to apply theme across all activities
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        overridePendingTransition(0, 0); // Remove animation for a smoother swap
     }
 
     private void setupClearHistory() {

@@ -179,32 +179,32 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:weightSum="3"
+                        android:weightSum="4"
                         android:layout_marginBottom="8dp">
 
                         <!-- Orange Theme Button -->
                         <LinearLayout
                             android:id="@+id/btnThemeOrange"
                             android:layout_width="0dp"
-                            android:layout_height="80dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
-                            android:layout_marginEnd="6dp"
+                            android:layout_marginEnd="3dp"
                             android:background="#FDEAEA"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:elevation="2dp">
 
                             <View
-                                android:layout_width="32dp"
-                                android:layout_height="16dp"
+                                android:layout_width="24dp"
+                                android:layout_height="12dp"
                                 android:background="#F15A24"
-                                android:layout_marginBottom="6dp"/>
+                                android:layout_marginBottom="4dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Orange"
-                                android:textSize="12sp"
+                                android:textSize="11sp"
                                 android:textColor="#4A152A"
                                 android:textStyle="bold"/>
                         </LinearLayout>
@@ -213,7 +213,7 @@
                         <LinearLayout
                             android:id="@+id/btnThemeTeal"
                             android:layout_width="0dp"
-                            android:layout_height="80dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
                             android:layout_marginHorizontal="3dp"
                             android:background="#CCFBF1"
@@ -222,16 +222,16 @@
                             android:elevation="2dp">
 
                             <View
-                                android:layout_width="32dp"
-                                android:layout_height="16dp"
+                                android:layout_width="24dp"
+                                android:layout_height="12dp"
                                 android:background="#0D9488"
-                                android:layout_marginBottom="6dp"/>
+                                android:layout_marginBottom="4dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Teal"
-                                android:textSize="12sp"
+                                android:textSize="11sp"
                                 android:textColor="#134E4A"
                                 android:textStyle="bold"/>
                         </LinearLayout>
@@ -240,26 +240,53 @@
                         <LinearLayout
                             android:id="@+id/btnThemePurple"
                             android:layout_width="0dp"
-                            android:layout_height="80dp"
+                            android:layout_height="70dp"
                             android:layout_weight="1"
-                            android:layout_marginStart="6dp"
+                            android:layout_marginHorizontal="3dp"
                             android:background="#F3E8FF"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:elevation="2dp">
 
                             <View
-                                android:layout_width="32dp"
-                                android:layout_height="16dp"
+                                android:layout_width="24dp"
+                                android:layout_height="12dp"
                                 android:background="#7C3AED"
-                                android:layout_marginBottom="6dp"/>
+                                android:layout_marginBottom="4dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Purple"
-                                android:textSize="12sp"
+                                android:textSize="11sp"
                                 android:textColor="#4C1D95"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+
+                        <!-- Blue Theme Button -->
+                        <LinearLayout
+                            android:id="@+id/btnThemeBlue"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="3dp"
+                            android:background="#EFF6FF"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:elevation="2dp">
+
+                            <View
+                                android:layout_width="24dp"
+                                android:layout_height="12dp"
+                                android:background="#2563EB"
+                                android:layout_marginBottom="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Blue"
+                                android:textSize="11sp"
+                                android:textColor="#1E3A8A"
                                 android:textStyle="bold"/>
                         </LinearLayout>
                     </LinearLayout>

@@ -30,6 +30,14 @@
     <color name="purple_text_primary">#4C1D95</color>
     <color name="purple_text_tertiary">#C4B5FD</color>
 
+    <!-- Blue Theme Palette -->
+    <color name="blue_primary">#2563EB</color>
+    <color name="blue_dark">#1E40AF</color>
+    <color name="blue_medium">#3B82F6</color>
+    <color name="bg_screen_blue">#EFF6FF</color>
+    <color name="blue_text_primary">#1E3A8A</color>
+    <color name="blue_text_tertiary">#93C5FD</color>
+
     <color name="location_icon_bg">#F3EFE9</color>
     <color name="location_icon_tint">#E55B5B</color>
 

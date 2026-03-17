@@ -14,9 +14,15 @@
     <color name="bg_gradient_end">#FAD7D7</color>
     <color name="bg_gradient_start">#FDEAEA</color>
     <color name="bg_screen">#FAD7D7</color>
+    <color name="bg_screen_blue">#EFF6FF</color>
     <color name="bg_screen_purple">#F3E8FF</color>
     <color name="bg_screen_teal">#CCFBF1</color>
     <color name="black">#FF000000</color>
+    <color name="blue_dark">#1E40AF</color>
+    <color name="blue_medium">#3B82F6</color>
+    <color name="blue_primary">#2563EB</color>
+    <color name="blue_text_primary">#1E3A8A</color>
+    <color name="blue_text_tertiary">#93C5FD</color>
     <color name="burgundy_faded">#7A364F</color>
     <color name="burgundy_text">#4A152A</color>
     <color name="coral">#E56E3B</color>
@@ -72,6 +78,25 @@
     </style>
     <style name="Theme.WristbandApp.Alarm" parent="Theme.WristbandApp">
         <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="Theme.WristbandApp.Blue" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue_primary</item>
+        <item name="colorPrimaryVariant">@color/blue_dark</item>
+        <item name="colorSecondary">@color/blue_medium</item>
+        <item name="colorAccent">@color/blue_primary</item>
+        <item name="android:windowBackground">@color/bg_screen_blue</item>
+        <item name="android:statusBarColor">@color/bg_screen_blue</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+
+        
+        <item name="colorAppPrimary">@color/blue_primary</item>
+        <item name="colorAppPrimaryDark">@color/blue_dark</item>
+        <item name="colorAppPrimaryLight">@color/blue_medium</item>
+        <item name="colorAppBackgroundStart">#EFF6FF</item>
+        <item name="colorAppBackgroundEnd">#DBEAFE</item>
+        <item name="colorAppCard">#B3FFFFFF</item>
+        <item name="colorAppAlert">@color/blue_medium</item>
+        <item name="colorAppAlertDark">@color/blue_dark</item>
     </style>
     <style name="Theme.WristbandApp.Purple" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/deep_purple_primary</item>
