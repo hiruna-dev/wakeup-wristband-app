@@ -35,7 +35,7 @@
                 android:layout_height="32dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_bell"
-                app:tint="@color/purple_dark"
+                app:tint="?attr/colorAppPrimaryDark"
                 android:contentDescription="Alarm" />
         </FrameLayout>
 
@@ -73,7 +73,7 @@
             android:layout_marginStart="14dp"
             android:layout_marginTop="4dp"
             android:text="7:30 AM"
-            android:textColor="@color/purple_primary"
+            android:textColor="?attr/colorAppPrimary"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/iconCircle"

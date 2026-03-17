@@ -22,6 +22,14 @@
     <color name="teal_text_primary">#134E4A</color>
     <color name="teal_text_tertiary">#99D4CF</color>
 
+    <!-- Deep Purple Theme Palette -->
+    <color name="deep_purple_primary">#7C3AED</color>
+    <color name="deep_purple_dark">#5B21B6</color>
+    <color name="deep_purple_medium">#8B5CF6</color>
+    <color name="bg_screen_purple">#F3E8FF</color>
+    <color name="purple_text_primary">#4C1D95</color>
+    <color name="purple_text_tertiary">#C4B5FD</color>
+
     <color name="location_icon_bg">#F3EFE9</color>
     <color name="location_icon_tint">#E55B5B</color>
 

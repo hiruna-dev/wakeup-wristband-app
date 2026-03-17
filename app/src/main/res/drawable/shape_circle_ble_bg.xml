@@ -2,5 +2,5 @@
 <!-- BLE status card icon background circle -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
-    <solid android:color="@color/purple_light" />
+    <solid android:color="?attr/colorAppPrimaryLight" />
 </shape>

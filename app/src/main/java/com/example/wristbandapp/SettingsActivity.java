@@ -30,6 +30,8 @@ public class SettingsActivity extends AppCompatActivity {
         String savedTheme = prefs.getString("app_theme", "orange");
         if ("teal".equals(savedTheme)) {
             setTheme(R.style.Theme_WristbandApp_Teal);
+        } else if ("purple".equals(savedTheme)) {
+            setTheme(R.style.Theme_WristbandApp_Purple);
         }
 
         super.onCreate(savedInstanceState);
@@ -100,9 +102,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         View btnOrange = findViewById(R.id.btnThemeOrange);
         View btnTeal   = findViewById(R.id.btnThemeTeal);
+        View btnPurple = findViewById(R.id.btnThemePurple);
 
         // Highlight active theme with a border/elevation boost
-        View activeView = "teal".equals(currentTheme) ? btnTeal : btnOrange;
+        View activeView;
+        if ("teal".equals(currentTheme)) activeView = btnTeal;
+        else if ("purple".equals(currentTheme)) activeView = btnPurple;
+        else activeView = btnOrange;
+
         activeView.setElevation(8f);
         // Add a check mark to currently active tile
         if (activeView instanceof LinearLayout) {
@@ -111,6 +118,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         btnOrange.setOnClickListener(v -> applyTheme("orange"));
         btnTeal.setOnClickListener(v   -> applyTheme("teal"));
+        btnPurple.setOnClickListener(v -> applyTheme("purple"));
     }
 
     private void applyTheme(String theme) {

@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/purple_primary"
-        app:hintTextColor="@color/purple_primary"
+        app:boxStrokeColor="?attr/colorAppPrimary"
+        app:hintTextColor="?attr/colorAppPrimary"
         app:boxCornerRadiusTopStart="8dp"
         app:boxCornerRadiusTopEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
@@ -68,8 +68,8 @@
             android:valueTo="500"
             android:value="50"
             android:stepSize="10"
-            app:thumbColor="@color/purple_primary"
-            app:trackColorActive="@color/purple_primary"
+            app:thumbColor="?attr/colorAppPrimary"
+            app:trackColorActive="?attr/colorAppPrimary"
             app:trackColorInactive="#D1D5DB" />
             
     </LinearLayout>

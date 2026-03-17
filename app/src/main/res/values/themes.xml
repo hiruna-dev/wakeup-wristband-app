@@ -7,6 +7,16 @@
         <item name="android:windowBackground">@color/bg_screen</item>
         <item name="android:statusBarColor">@color/bg_screen</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        
+        <!-- Custom Attributes Mapping (Orange Theme) -->
+        <item name="colorAppPrimary">@color/purple_primary</item>
+        <item name="colorAppPrimaryDark">@color/purple_dark</item>
+        <item name="colorAppPrimaryLight">@color/purple_light</item>
+        <item name="colorAppBackgroundStart">@color/bg_gradient_start</item>
+        <item name="colorAppBackgroundEnd">@color/bg_gradient_end</item>
+        <item name="colorAppCard">@color/bg_card_glass</item>
+        <item name="colorAppAlert">@color/coral</item>
+        <item name="colorAppAlertDark">@color/coral_dark</item>
     </style>
 
     <style name="Theme.WristbandApp.Teal" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -17,6 +27,36 @@
         <item name="android:windowBackground">@color/bg_screen_teal</item>
         <item name="android:statusBarColor">@color/bg_screen_teal</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <!-- Custom Attributes Mapping (Teal Theme) -->
+        <item name="colorAppPrimary">@color/teal_primary</item>
+        <item name="colorAppPrimaryDark">@color/teal_dark</item>
+        <item name="colorAppPrimaryLight">@color/teal_medium</item>
+        <item name="colorAppBackgroundStart">#E0F2FE</item>  <!-- Cool start -->
+        <item name="colorAppBackgroundEnd">#CCFBF1</item>    <!-- Cool end -->
+        <item name="colorAppCard">#B3FFFFFF</item>           <!-- Teal Glass -->
+        <item name="colorAppAlert">@color/teal_medium</item>
+        <item name="colorAppAlertDark">@color/teal_dark</item>
+    </style>
+
+    <style name="Theme.WristbandApp.Purple" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/deep_purple_primary</item>
+        <item name="colorPrimaryVariant">@color/deep_purple_dark</item>
+        <item name="colorSecondary">@color/deep_purple_medium</item>
+        <item name="colorAccent">@color/deep_purple_primary</item>
+        <item name="android:windowBackground">@color/bg_screen_purple</item>
+        <item name="android:statusBarColor">@color/bg_screen_purple</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <!-- Custom Attributes Mapping (Purple Theme) -->
+        <item name="colorAppPrimary">@color/deep_purple_primary</item>
+        <item name="colorAppPrimaryDark">@color/deep_purple_dark</item>
+        <item name="colorAppPrimaryLight">@color/deep_purple_medium</item>
+        <item name="colorAppBackgroundStart">#F3E8FF</item>
+        <item name="colorAppBackgroundEnd">#E9D5FF</item>
+        <item name="colorAppCard">#B3FFFFFF</item>
+        <item name="colorAppAlert">@color/deep_purple_medium</item>
+        <item name="colorAppAlertDark">@color/deep_purple_dark</item>
     </style>
 
     <style name="Theme.WristbandApp.Alarm" parent="Theme.WristbandApp">

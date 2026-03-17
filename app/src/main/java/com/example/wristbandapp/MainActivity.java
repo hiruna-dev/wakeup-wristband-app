@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         String savedTheme = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("app_theme", "orange");
         if ("teal".equals(savedTheme)) {
             setTheme(R.style.Theme_WristbandApp_Teal);
+        } else if ("purple".equals(savedTheme)) {
+            setTheme(R.style.Theme_WristbandApp_Purple);
         }
 
         super.onCreate(savedInstanceState);

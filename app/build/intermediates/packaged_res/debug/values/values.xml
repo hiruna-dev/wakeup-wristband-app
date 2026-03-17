@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="color" name="colorAppAlert"/>
+    <attr format="color" name="colorAppAlertDark"/>
+    <attr format="color" name="colorAppBackgroundEnd"/>
+    <attr format="color" name="colorAppBackgroundStart"/>
+    <attr format="color" name="colorAppCard"/>
+    <attr format="color" name="colorAppPrimary"/>
+    <attr format="color" name="colorAppPrimaryDark"/>
+    <attr format="color" name="colorAppPrimaryLight"/>
     <color name="bg_card">#FFFFFF</color>
     <color name="bg_card_glass">#99FFFFFF</color>
     <color name="bg_card_solid">#FFFFFF</color>
     <color name="bg_gradient_end">#FAD7D7</color>
     <color name="bg_gradient_start">#FDEAEA</color>
     <color name="bg_screen">#FAD7D7</color>
+    <color name="bg_screen_purple">#F3E8FF</color>
     <color name="bg_screen_teal">#CCFBF1</color>
     <color name="black">#FF000000</color>
     <color name="burgundy_faded">#7A364F</color>
     <color name="burgundy_text">#4A152A</color>
     <color name="coral">#E56E3B</color>
     <color name="coral_dark">#F15A24</color>
+    <color name="deep_purple_dark">#5B21B6</color>
+    <color name="deep_purple_medium">#8B5CF6</color>
+    <color name="deep_purple_primary">#7C3AED</color>
     <color name="location_icon_bg">#F3EFE9</color>
     <color name="location_icon_tint">#E55B5B</color>
     <color name="orange_gradient_end">#F15A24</color>
@@ -25,6 +37,8 @@
     <color name="purple_light">#FDEAEA</color>
     <color name="purple_medium">#FF7E46</color>
     <color name="purple_primary">#F15A24</color>
+    <color name="purple_text_primary">#4C1D95</color>
+    <color name="purple_text_tertiary">#C4B5FD</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="teal_dark">#115E59</color>
@@ -45,9 +59,38 @@
         <item name="android:windowBackground">@color/bg_screen</item>
         <item name="android:statusBarColor">@color/bg_screen</item>
         <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+        
+        
+        <item name="colorAppPrimary">@color/purple_primary</item>
+        <item name="colorAppPrimaryDark">@color/purple_dark</item>
+        <item name="colorAppPrimaryLight">@color/purple_light</item>
+        <item name="colorAppBackgroundStart">@color/bg_gradient_start</item>
+        <item name="colorAppBackgroundEnd">@color/bg_gradient_end</item>
+        <item name="colorAppCard">@color/bg_card_glass</item>
+        <item name="colorAppAlert">@color/coral</item>
+        <item name="colorAppAlertDark">@color/coral_dark</item>
     </style>
     <style name="Theme.WristbandApp.Alarm" parent="Theme.WristbandApp">
         <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="Theme.WristbandApp.Purple" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/deep_purple_primary</item>
+        <item name="colorPrimaryVariant">@color/deep_purple_dark</item>
+        <item name="colorSecondary">@color/deep_purple_medium</item>
+        <item name="colorAccent">@color/deep_purple_primary</item>
+        <item name="android:windowBackground">@color/bg_screen_purple</item>
+        <item name="android:statusBarColor">@color/bg_screen_purple</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+
+        
+        <item name="colorAppPrimary">@color/deep_purple_primary</item>
+        <item name="colorAppPrimaryDark">@color/deep_purple_dark</item>
+        <item name="colorAppPrimaryLight">@color/deep_purple_medium</item>
+        <item name="colorAppBackgroundStart">#F3E8FF</item>
+        <item name="colorAppBackgroundEnd">#E9D5FF</item>
+        <item name="colorAppCard">#B3FFFFFF</item>
+        <item name="colorAppAlert">@color/deep_purple_medium</item>
+        <item name="colorAppAlertDark">@color/deep_purple_dark</item>
     </style>
     <style name="Theme.WristbandApp.Teal" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/teal_primary</item>
@@ -57,5 +100,15 @@
         <item name="android:windowBackground">@color/bg_screen_teal</item>
         <item name="android:statusBarColor">@color/bg_screen_teal</item>
         <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+
+        
+        <item name="colorAppPrimary">@color/teal_primary</item>
+        <item name="colorAppPrimaryDark">@color/teal_dark</item>
+        <item name="colorAppPrimaryLight">@color/teal_medium</item>
+        <item name="colorAppBackgroundStart">#E0F2FE</item>  
+        <item name="colorAppBackgroundEnd">#CCFBF1</item>    
+        <item name="colorAppCard">#B3FFFFFF</item>           
+        <item name="colorAppAlert">@color/teal_medium</item>
+        <item name="colorAppAlertDark">@color/teal_dark</item>
     </style>
 </resources>

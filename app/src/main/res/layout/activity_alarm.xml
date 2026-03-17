@@ -215,14 +215,14 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Low"
-                        android:textColor="@color/purple_primary"
+                        android:textColor="?attr/colorAppPrimary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <View
                         android:layout_width="1.5dp"
                         android:layout_height="match_parent"
-                        android:background="@color/purple_primary" />
+                        android:background="?attr/colorAppPrimary" />
 
                     <!-- Medium (selected) -->
                     <TextView
@@ -230,7 +230,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@color/purple_primary"
+                        android:background="?attr/colorAppPrimary"
                         android:gravity="center"
                         android:text="Medium"
                         android:textColor="@color/white"
@@ -240,7 +240,7 @@
                     <View
                         android:layout_width="1.5dp"
                         android:layout_height="match_parent"
-                        android:background="@color/purple_primary" />
+                        android:background="?attr/colorAppPrimary" />
 
                     <TextView
                         android:id="@+id/vibHigh"
@@ -249,7 +249,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="High"
-                        android:textColor="@color/purple_primary"
+                        android:textColor="?attr/colorAppPrimary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -265,11 +265,11 @@
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp"
-                    app:boxStrokeColor="@color/purple_primary"
-                    app:hintTextColor="@color/purple_primary"
+                    app:boxStrokeColor="?attr/colorAppPrimary"
+                    app:hintTextColor="?attr/colorAppPrimary"
                     app:endIconMode="custom"
                     app:endIconDrawable="@drawable/ic_pencil"
-                    app:endIconTint="@color/purple_primary">
+                    app:endIconTint="?attr/colorAppPrimary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etAlarmLabel"

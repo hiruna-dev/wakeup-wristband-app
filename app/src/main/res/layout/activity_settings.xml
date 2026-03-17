@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/bg_card_glass"
+                app:cardBackgroundColor="?attr/colorAppCard"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
@@ -82,8 +82,8 @@
                         android:valueTo="500"
                         android:value="50"
                         android:stepSize="10"
-                        app:thumbColor="@color/purple_primary"
-                        app:trackColorActive="@color/purple_primary"
+                        app:thumbColor="?attr/colorAppPrimary"
+                        app:trackColorActive="?attr/colorAppPrimary"
                         app:trackColorInactive="#D1D5DB"
                         android:layout_marginBottom="20dp" />
 
@@ -112,13 +112,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Low"
-                            android:textColor="@color/purple_primary"
+                            android:textColor="?attr/colorAppPrimary"
                             android:textSize="14sp"/>
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/purple_primary"
+                            android:background="?attr/colorAppPrimary"
                             android:alpha="0.2"/>
 
                         <TextView
@@ -128,13 +128,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Medium"
-                            android:textColor="@color/purple_primary"
+                            android:textColor="?attr/colorAppPrimary"
                             android:textSize="14sp"/>
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/purple_primary"
+                            android:background="?attr/colorAppPrimary"
                             android:alpha="0.2"/>
 
                         <TextView
@@ -144,7 +144,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="High"
-                            android:textColor="@color/purple_primary"
+                            android:textColor="?attr/colorAppPrimary"
                             android:textSize="14sp"/>
                     </LinearLayout>
 
@@ -156,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/bg_card_glass"
+                app:cardBackgroundColor="?attr/colorAppCard"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
@@ -179,7 +179,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:weightSum="2"
+                        android:weightSum="3"
                         android:layout_marginBottom="8dp">
 
                         <!-- Orange Theme Button -->
@@ -188,7 +188,7 @@
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_weight="1"
-                            android:layout_marginEnd="8dp"
+                            android:layout_marginEnd="6dp"
                             android:background="#FDEAEA"
                             android:orientation="vertical"
                             android:gravity="center"
@@ -203,7 +203,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Warm Orange"
+                                android:text="Orange"
                                 android:textSize="12sp"
                                 android:textColor="#4A152A"
                                 android:textStyle="bold"/>
@@ -215,7 +215,7 @@
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_weight="1"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginHorizontal="3dp"
                             android:background="#CCFBF1"
                             android:orientation="vertical"
                             android:gravity="center"
@@ -230,9 +230,36 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Cool Teal"
+                                android:text="Teal"
                                 android:textSize="12sp"
                                 android:textColor="#134E4A"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+
+                        <!-- Purple Theme Button -->
+                        <LinearLayout
+                            android:id="@+id/btnThemePurple"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:background="#F3E8FF"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:elevation="2dp">
+
+                            <View
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:background="#7C3AED"
+                                android:layout_marginBottom="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Purple"
+                                android:textSize="12sp"
+                                android:textColor="#4C1D95"
                                 android:textStyle="bold"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -254,7 +281,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/bg_card_glass"
+                app:cardBackgroundColor="?attr/colorAppCard"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
@@ -344,10 +371,10 @@
             android:layout_height="match_parent" android:layout_weight="1"
             android:gravity="center" android:orientation="vertical">
             <ImageView android:layout_width="24dp" android:layout_height="24dp"
-                android:src="@drawable/ic_settings" app:tint="@color/purple_primary" />
+                android:src="@drawable/ic_settings" app:tint="?attr/colorAppPrimary" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:layout_marginTop="2dp" android:text="Settings"
-                android:textColor="@color/purple_primary" android:textSize="10sp" />
+                android:textColor="?attr/colorAppPrimary" android:textSize="10sp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,29 @@
 R_DEF: Internal format may change without notice
 local
+attr colorAppAlert
+attr colorAppAlertDark
+attr colorAppBackgroundEnd
+attr colorAppBackgroundStart
+attr colorAppCard
+attr colorAppPrimary
+attr colorAppPrimaryDark
+attr colorAppPrimaryLight
 color bg_card
 color bg_card_glass
 color bg_card_solid
 color bg_gradient_end
 color bg_gradient_start
 color bg_screen
+color bg_screen_purple
 color bg_screen_teal
 color black
 color burgundy_faded
 color burgundy_text
 color coral
 color coral_dark
+color deep_purple_dark
+color deep_purple_medium
+color deep_purple_primary
 color location_icon_bg
 color location_icon_tint
 color orange_gradient_end
@@ -25,6 +37,8 @@ color purple_dark
 color purple_light
 color purple_medium
 color purple_primary
+color purple_text_primary
+color purple_text_tertiary
 color teal_200
 color teal_700
 color teal_dark
@@ -76,6 +90,7 @@ id btnDelete
 id btnSetAlarm
 id btnTest
 id btnThemeOrange
+id btnThemePurple
 id btnThemeTeal
 id btnViewMap
 id buttonContainer
@@ -152,4 +167,5 @@ mipmap ic_launcher_round
 string app_name
 style Theme.WristbandApp
 style Theme.WristbandApp.Alarm
+style Theme.WristbandApp.Purple
 style Theme.WristbandApp.Teal

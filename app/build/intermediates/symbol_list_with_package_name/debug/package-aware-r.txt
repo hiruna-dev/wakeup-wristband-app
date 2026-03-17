@@ -331,6 +331,14 @@ attr collapsingToolbarLayoutMediumStyle
 attr collapsingToolbarLayoutStyle
 attr color
 attr colorAccent
+attr colorAppAlert
+attr colorAppAlertDark
+attr colorAppBackgroundEnd
+attr colorAppBackgroundStart
+attr colorAppCard
+attr colorAppPrimary
+attr colorAppPrimaryDark
+attr colorAppPrimaryLight
 attr colorBackgroundFloating
 attr colorButtonNormal
 attr colorContainer
@@ -1391,6 +1399,7 @@ color bg_card_solid
 color bg_gradient_end
 color bg_gradient_start
 color bg_screen
+color bg_screen_purple
 color bg_screen_teal
 color black
 color bright_foreground_disabled_material_dark
@@ -1420,6 +1429,9 @@ color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
 color coral
 color coral_dark
+color deep_purple_dark
+color deep_purple_medium
+color deep_purple_primary
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2159,6 +2171,8 @@ color purple_dark
 color purple_light
 color purple_medium
 color purple_primary
+color purple_text_primary
+color purple_text_tertiary
 color quantum_amber100
 color quantum_amber200
 color quantum_amber300
@@ -3685,6 +3699,7 @@ id btnDelete
 id btnSetAlarm
 id btnTest
 id btnThemeOrange
+id btnThemePurple
 id btnThemeTeal
 id btnViewMap
 id buttonContainer
@@ -5199,6 +5214,7 @@ style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_WristbandApp
 style Theme_WristbandApp_Alarm
+style Theme_WristbandApp_Purple
 style Theme_WristbandApp_Teal
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar

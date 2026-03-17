@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom theme attributes for dynamic theming -->
+    <attr name="colorAppPrimary" format="color" />
+    <attr name="colorAppPrimaryDark" format="color" />
+    <attr name="colorAppPrimaryLight" format="color" />
+    <attr name="colorAppBackgroundStart" format="color" />
+    <attr name="colorAppBackgroundEnd" format="color" />
+    <attr name="colorAppCard" format="color" />
+    <attr name="colorAppAlert" format="color" />
+    <attr name="colorAppAlertDark" format="color" />
+</resources>

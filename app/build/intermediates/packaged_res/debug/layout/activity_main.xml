@@ -72,7 +72,7 @@
                             android:layout_height="36dp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_wristband"
-                            app:tint="@color/purple_dark"
+                            app:tint="?attr/colorAppPrimaryDark"
                             android:contentDescription="Wristband" />
                     </FrameLayout>
 
@@ -98,7 +98,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="Disconnected"
-                            android:textColor="@color/coral"
+                            android:textColor="?attr/colorAppAlert"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -138,7 +138,7 @@
                     android:layout_marginStart="8dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="2dp"
-                    app:cardBackgroundColor="@color/coral">
+                    app:cardBackgroundColor="?attr/colorAppPrimary">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -184,7 +184,7 @@
                             android:layout_height="wrap_content"
                             android:checked="true"
                             app:thumbTint="@color/white"
-                            app:trackTint="@color/coral_dark"
+                            app:trackTint="?attr/colorAppPrimaryDark"
                             android:contentDescription="Toggle emergency alert" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -223,7 +223,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
         android:src="@drawable/ic_bell"
-        app:backgroundTint="@color/purple_primary"
+        app:backgroundTint="?attr/colorAppPrimary"
         app:tint="@color/white"
         android:contentDescription="Set Alarm" />
 
@@ -250,7 +250,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/purple_primary"
+                app:tint="?attr/colorAppPrimary"
                 android:contentDescription="Home" />
 
             <TextView
@@ -258,7 +258,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Home"
-                android:textColor="@color/purple_primary"
+                android:textColor="?attr/colorAppPrimary"
                 android:textSize="10sp"
                 android:textStyle="bold" />
         </LinearLayout>
