@@ -6,6 +6,7 @@
     <color name="bg_gradient_end">#FAD7D7</color>
     <color name="bg_gradient_start">#FDEAEA</color>
     <color name="bg_screen">#FAD7D7</color>
+    <color name="bg_screen_teal">#CCFBF1</color>
     <color name="black">#FF000000</color>
     <color name="burgundy_faded">#7A364F</color>
     <color name="burgundy_text">#4A152A</color>
@@ -26,6 +27,11 @@
     <color name="purple_primary">#F15A24</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="teal_dark">#115E59</color>
+    <color name="teal_medium">#14B8A6</color>
+    <color name="teal_primary">#0D9488</color>
+    <color name="teal_text_primary">#134E4A</color>
+    <color name="teal_text_tertiary">#99D4CF</color>
     <color name="text_primary">#4A152A</color>
     <color name="text_secondary">#7A364F</color>
     <color name="text_tertiary">#DCA8A8</color>
@@ -42,5 +48,14 @@
     </style>
     <style name="Theme.WristbandApp.Alarm" parent="Theme.WristbandApp">
         <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="Theme.WristbandApp.Teal" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/teal_primary</item>
+        <item name="colorPrimaryVariant">@color/teal_dark</item>
+        <item name="colorSecondary">@color/teal_medium</item>
+        <item name="colorAccent">@color/teal_primary</item>
+        <item name="android:windowBackground">@color/bg_screen_teal</item>
+        <item name="android:statusBarColor">@color/bg_screen_teal</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
     </style>
 </resources>

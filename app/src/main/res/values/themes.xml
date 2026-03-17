@@ -9,6 +9,16 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
+    <style name="Theme.WristbandApp.Teal" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/teal_primary</item>
+        <item name="colorPrimaryVariant">@color/teal_dark</item>
+        <item name="colorSecondary">@color/teal_medium</item>
+        <item name="colorAccent">@color/teal_primary</item>
+        <item name="android:windowBackground">@color/bg_screen_teal</item>
+        <item name="android:statusBarColor">@color/bg_screen_teal</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
     <style name="Theme.WristbandApp.Alarm" parent="Theme.WristbandApp">
         <item name="android:windowBackground">@color/white</item>
     </style>

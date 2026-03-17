@@ -6,6 +6,7 @@ color bg_card_solid
 color bg_gradient_end
 color bg_gradient_start
 color bg_screen
+color bg_screen_teal
 color black
 color burgundy_faded
 color burgundy_text
@@ -26,6 +27,11 @@ color purple_medium
 color purple_primary
 color teal_200
 color teal_700
+color teal_dark
+color teal_medium
+color teal_primary
+color teal_text_primary
+color teal_text_tertiary
 color text_primary
 color text_secondary
 color text_tertiary
@@ -69,6 +75,8 @@ id btnConnect
 id btnDelete
 id btnSetAlarm
 id btnTest
+id btnThemeOrange
+id btnThemeTeal
 id btnViewMap
 id buttonContainer
 id cardBleStatus
@@ -85,6 +93,9 @@ id daySun
 id dayThu
 id dayTue
 id dayWed
+id defaultVibHigh
+id defaultVibLow
+id defaultVibMedium
 id etAlarmLabel
 id etLat
 id etLng
@@ -105,8 +116,6 @@ id scrollMain
 id searchContainer
 id sliderDefaultRadius
 id sliderRadius
-id spinnerDefaultVibration
-id switchTheme
 id timePicker
 id tvBleStatus
 id tvCoords
@@ -118,6 +127,7 @@ id tvRepeat
 id tvRowName
 id tvRowValue
 id tvSettingsTitle
+id tvThemeHint
 id tvTime
 id tvTitle
 id tvTotalAlerts
@@ -125,6 +135,7 @@ id vibHigh
 id vibLow
 id vibMedium
 id vibrationPicker
+id vibrationSegmentGroup
 id viewMapThumb
 layout activity_alarm
 layout activity_analytics
@@ -141,3 +152,4 @@ mipmap ic_launcher_round
 string app_name
 style Theme.WristbandApp
 style Theme.WristbandApp.Alarm
+style Theme.WristbandApp.Teal

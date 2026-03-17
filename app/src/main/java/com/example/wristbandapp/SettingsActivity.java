@@ -5,42 +5,41 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.slider.Slider;
-import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private SharedPreferences prefs;
     private DatabaseHelper dbHelper;
 
+    // Vibration segment views
+    private TextView defaultVibLow, defaultVibMedium, defaultVibHigh;
+    private String selectedVibration = "Medium";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Enforce Theme BEFORE super.onCreate
-        boolean isDarkTheme = getSharedPreferences("AppPrefs", MODE_PRIVATE).getBoolean("theme_dark", false);
-        if (isDarkTheme) {
-            setTheme(androidx.appcompat.R.style.Theme_AppCompat_DayNight_DarkActionBar);
-        } else {
-            setTheme(androidx.appcompat.R.style.Theme_AppCompat_Light_DarkActionBar);
+        // Apply saved theme before inflate
+        prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String savedTheme = prefs.getString("app_theme", "orange");
+        if ("teal".equals(savedTheme)) {
+            setTheme(R.style.Theme_WristbandApp_Teal);
         }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
         dbHelper = new DatabaseHelper(this);
 
         setupRadiusSlider();
-        setupVibrationSpinner();
-        setupThemeToggle(isDarkTheme);
+        setupVibrationSegment();
+        setupThemeButtons();
         setupClearHistory();
         setupBottomNav();
     }
@@ -59,38 +58,71 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void setupVibrationSpinner() {
-        Spinner spinner = findViewById(R.id.spinnerDefaultVibration);
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"Low", "Medium", "High"});
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+    private void setupVibrationSegment() {
+        defaultVibLow    = findViewById(R.id.defaultVibLow);
+        defaultVibMedium = findViewById(R.id.defaultVibMedium);
+        defaultVibHigh   = findViewById(R.id.defaultVibHigh);
 
-        String savedVib = prefs.getString("default_vibration", "Medium");
-        int spinnerPosition = adapter.getPosition(savedVib);
-        spinner.setSelection(spinnerPosition);
+        selectedVibration = prefs.getString("default_vibration", "Medium");
+        refreshVibUI();
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selected = (String) parent.getItemAtPosition(position);
-                prefs.edit().putString("default_vibration", selected).apply();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+        defaultVibLow.setOnClickListener(v    -> selectVib("Low"));
+        defaultVibMedium.setOnClickListener(v -> selectVib("Medium"));
+        defaultVibHigh.setOnClickListener(v   -> selectVib("High"));
     }
 
-    private void setupThemeToggle(boolean isCurrentlyDark) {
-        SwitchMaterial themeSwitch = findViewById(R.id.switchTheme);
-        themeSwitch.setChecked(isCurrentlyDark);
+    private void selectVib(String level) {
+        selectedVibration = level;
+        prefs.edit().putString("default_vibration", level).apply();
+        refreshVibUI();
+    }
 
-        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            prefs.edit().putBoolean("theme_dark", isChecked).apply();
-            // Optional: Recreate activity instantly upon toggle
-            recreate();
-        });
+    private void refreshVibUI() {
+        TextView[] views = {defaultVibLow, defaultVibMedium, defaultVibHigh};
+        String[] labels  = {"Low", "Medium", "High"};
+        int colorActive  = getColor(R.color.purple_primary);
+        int colorInactive = getColor(R.color.purple_primary);
+
+        for (int i = 0; i < views.length; i++) {
+            if (views[i] == null) continue;
+            if (labels[i].equals(selectedVibration)) {
+                views[i].setBackgroundColor(colorActive);
+                views[i].setTextColor(getColor(R.color.white));
+            } else {
+                views[i].setBackgroundColor(android.graphics.Color.TRANSPARENT);
+                views[i].setTextColor(colorInactive);
+            }
+        }
+    }
+
+    private void setupThemeButtons() {
+        String currentTheme = prefs.getString("app_theme", "orange");
+
+        View btnOrange = findViewById(R.id.btnThemeOrange);
+        View btnTeal   = findViewById(R.id.btnThemeTeal);
+
+        // Highlight active theme with a border/elevation boost
+        View activeView = "teal".equals(currentTheme) ? btnTeal : btnOrange;
+        activeView.setElevation(8f);
+        // Add a check mark to currently active tile
+        if (activeView instanceof LinearLayout) {
+            ((LinearLayout) activeView).setAlpha(1f);
+        }
+
+        btnOrange.setOnClickListener(v -> applyTheme("orange"));
+        btnTeal.setOnClickListener(v   -> applyTheme("teal"));
+    }
+
+    private void applyTheme(String theme) {
+        if (theme.equals(prefs.getString("app_theme", "orange"))) {
+            Toast.makeText(this, "Already using this theme", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        prefs.edit().putString("app_theme", theme).apply();
+        // Restart app to apply theme across all activities
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     private void setupClearHistory() {
@@ -98,8 +130,8 @@ public class SettingsActivity extends AppCompatActivity {
         btnClear.setOnClickListener(v -> {
             new AlertDialog.Builder(this)
                 .setTitle("Clear History")
-                .setMessage("Are you sure you want to permanently delete all Analytics and Heatmap data? Saved locations and alarms will NOT be deleted.")
-                .setPositiveButton("Clear Everything", (dialog, which) -> {
+                .setMessage("Permanently delete all Analytics and Heatmap data? Saved Locations and Alarms are NOT deleted.")
+                .setPositiveButton("Clear", (dialog, which) -> {
                     dbHelper.clearAllHistory();
                     Toast.makeText(this, "Analytics history cleared", Toast.LENGTH_SHORT).show();
                 })
@@ -110,7 +142,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void setupBottomNav() {
         findViewById(R.id.navHome).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
             finish();
         });
         findViewById(R.id.navMap).setOnClickListener(v -> {
@@ -121,6 +154,6 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(new Intent(this, AnalyticsActivity.class));
             finish();
         });
-        // navSettings does nothing (already here)
+        // navSettings is the current screen — no action
     }
 }

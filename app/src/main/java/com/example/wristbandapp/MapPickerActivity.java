@@ -39,6 +39,9 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String savedTheme = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("app_theme", "orange");
+        if ("teal".equals(savedTheme)) setTheme(R.style.Theme_WristbandApp_Teal);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_picker);
 
@@ -77,6 +80,13 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         if (navAnalytics != null) {
             navAnalytics.setOnClickListener(v -> {
                 startActivity(new Intent(this, AnalyticsActivity.class));
+            });
+        }
+
+        View navSettings = findViewById(R.id.navSettings);
+        if (navSettings != null) {
+            navSettings.setOnClickListener(v -> {
+                startActivity(new Intent(this, SettingsActivity.class));
             });
         }
     }

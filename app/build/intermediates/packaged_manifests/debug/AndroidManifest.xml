@@ -70,6 +70,7 @@
         </activity>
         <activity android:name="com.example.wristbandapp.MapPickerActivity" />
         <activity android:name="com.example.wristbandapp.AlarmActivity" />
+        <activity android:name="com.example.wristbandapp.SettingsActivity" />
         <activity
             android:name="com.example.wristbandapp.AnalyticsActivity"
             android:exported="false"

@@ -17,11 +17,13 @@ public class AnalyticsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String savedTheme = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("app_theme", "orange");
+        if ("teal".equals(savedTheme)) setTheme(R.style.Theme_WristbandApp_Teal);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analytics);
 
         databaseHelper = new DatabaseHelper(this);
-
         setupBottomNavigation();
     }
 
@@ -199,19 +201,24 @@ public class AnalyticsActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         View navHome = findViewById(R.id.navHome);
         View navMap = findViewById(R.id.navMap);
+        View navSettings = findViewById(R.id.navSettings);
 
         navHome.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            // clear top so we don't stack activities endlessly
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
+            startActivity(new Intent(this, MainActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
             finish();
         });
 
         navMap.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MapPickerActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, MapPickerActivity.class));
             finish();
         });
+
+        if (navSettings != null) {
+            navSettings.setOnClickListener(v -> {
+                startActivity(new Intent(this, SettingsActivity.class));
+                finish();
+            });
+        }
     }
 }

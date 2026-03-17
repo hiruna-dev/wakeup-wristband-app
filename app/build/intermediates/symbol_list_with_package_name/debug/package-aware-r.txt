@@ -1391,6 +1391,7 @@ color bg_card_solid
 color bg_gradient_end
 color bg_gradient_start
 color bg_screen
+color bg_screen_teal
 color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
@@ -2515,6 +2516,11 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color teal_200
 color teal_700
+color teal_dark
+color teal_medium
+color teal_primary
+color teal_text_primary
+color teal_text_tertiary
 color text_primary
 color text_secondary
 color text_tertiary
@@ -3678,6 +3684,8 @@ id btnConnect
 id btnDelete
 id btnSetAlarm
 id btnTest
+id btnThemeOrange
+id btnThemeTeal
 id btnViewMap
 id buttonContainer
 id buttonPanel
@@ -3738,6 +3746,9 @@ id dayWed
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
+id defaultVibHigh
+id defaultVibLow
+id defaultVibMedium
 id default_activity_button
 id deltaRelative
 id dependency_ordering
@@ -4043,7 +4054,6 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinnerDefaultVibration
 id spline
 id split_action_bar
 id spread
@@ -4065,7 +4075,6 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
-id switchTheme
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -4124,6 +4133,7 @@ id tvRepeat
 id tvRowName
 id tvRowValue
 id tvSettingsTitle
+id tvThemeHint
 id tvTime
 id tvTitle
 id tvTotalAlerts
@@ -4137,6 +4147,7 @@ id vibHigh
 id vibLow
 id vibMedium
 id vibrationPicker
+id vibrationSegmentGroup
 id viewMapThumb
 id view_offset_helper
 id view_transition
@@ -5188,6 +5199,7 @@ style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_WristbandApp
 style Theme_WristbandApp_Alarm
+style Theme_WristbandApp_Teal
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

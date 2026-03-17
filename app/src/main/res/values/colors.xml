@@ -8,11 +8,19 @@
     <color name="orange_toggle">#E56E3B</color>
     <color name="orange_toggle_on">#68D391</color>
     
-    <!-- Background colors -->
+    <!-- Background colors (orange theme) -->
     <color name="bg_gradient_start">#FDEAEA</color>
     <color name="bg_gradient_end">#FAD7D7</color>
     <color name="bg_card_glass">#99FFFFFF</color> <!-- 60% opacity white -->
     <color name="bg_card_solid">#FFFFFF</color>
+
+    <!-- Teal / Cool Theme Palette -->
+    <color name="teal_primary">#0D9488</color>
+    <color name="teal_dark">#115E59</color>
+    <color name="teal_medium">#14B8A6</color>
+    <color name="bg_screen_teal">#CCFBF1</color>
+    <color name="teal_text_primary">#134E4A</color>
+    <color name="teal_text_tertiary">#99D4CF</color>
 
     <color name="location_icon_bg">#F3EFE9</color>
     <color name="location_icon_tint">#E55B5B</color>

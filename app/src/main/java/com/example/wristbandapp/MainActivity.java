@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Apply saved theme before inflate
+        String savedTheme = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("app_theme", "orange");
+        if ("teal".equals(savedTheme)) {
+            setTheme(R.style.Theme_WristbandApp_Teal);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -152,11 +158,18 @@ public class MainActivity extends AppCompatActivity {
         checkPermissions();
         loadDashboard();
         startLocationService();
+
         View navAnalytics = findViewById(R.id.navAnalytics);
         if (navAnalytics != null) {
             navAnalytics.setOnClickListener(v -> {
-                Intent intent = new Intent(this, AnalyticsActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(this, AnalyticsActivity.class));
+            });
+        }
+
+        View navSettings = findViewById(R.id.navSettings);
+        if (navSettings != null) {
+            navSettings.setOnClickListener(v -> {
+                startActivity(new Intent(this, SettingsActivity.class));
             });
         }
     }

@@ -1,19 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_shape_circle_ble_bg.xml.flat",
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_circle_ble_bg.xml"
     },
     {
-        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_pencil.xml.flat",
-        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_pencil.xml"
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_bg_bottom_nav.xml.flat",
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\bg_bottom_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_pencil.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_pencil.xml"
     },
     {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\font_title.ttf.flat",
