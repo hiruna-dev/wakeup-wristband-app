@@ -330,6 +330,72 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return activity;
     }
 
+    public void seedDummyData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor c = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_LOCATION_LOGS, null);
+        if (c.moveToFirst() && c.getInt(0) > 0) {
+            c.close();
+            db.close();
+            return;
+        }
+        c.close();
+
+        String[] locations = {"NIBM", "Dompe", "One Galle Face", "Havelock City Mall"};
+        long[] locIds = new long[4];
+        double[] lats = {6.9061, 6.9463, 6.9271, 6.8839};
+        double[] lngs = {79.8706, 80.0573, 79.8436, 79.8660};
+        
+        for (int i = 0; i < 4; i++) {
+            ContentValues v = new ContentValues();
+            v.put("name", locations[i]);
+            v.put("latitude", lats[i]);
+            v.put("longitude", lngs[i]);
+            v.put("radius_meters", 150);
+            locIds[i] = db.insert(TABLE_LOCATIONS, null, v);
+        }
+
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        long now = cal.getTimeInMillis();
+        long oneDayMs = 24L * 60 * 60 * 1000L;
+        java.util.Random rnd = new java.util.Random();
+        
+        for (int i = 0; i < 7; i++) {
+            long dayStartMs = now - ((6 - i) * oneDayMs);
+            int visits = 3 + rnd.nextInt(4);
+            for (int v = 0; v < visits; v++) {
+                int locIdx = rnd.nextInt(4);
+                long hourOff = rnd.nextInt(24) * 60 * 60 * 1000L;
+                long minOff = rnd.nextInt(60) * 60 * 1000L;
+                long entryMs = dayStartMs - (now % oneDayMs) + hourOff + minOff; 
+                if (entryMs > now) {
+                    entryMs = now - 10000;
+                }
+                
+                long durMs = (15 + rnd.nextInt(165)) * 60 * 1000L;
+                long exitMs = entryMs + durMs;
+                if (exitMs > now) exitMs = now;
+                
+                ContentValues logV = new ContentValues();
+                logV.put("location_id", locIds[locIdx]);
+                logV.put("location_name", locations[locIdx]);
+                logV.put("entry_time", entryMs);
+                logV.put("exit_time", exitMs);
+                db.insert(TABLE_LOCATION_LOGS, null, logV);
+            }
+        }
+        
+        for (int i = 0; i < 6; i++) {
+            long triggerMs = now - rnd.nextInt((int)(7 * oneDayMs));
+            ContentValues alarmV = new ContentValues();
+            alarmV.put("alarm_id", 1);
+            alarmV.put("trigger_time", triggerMs);
+            alarmV.put("label", "Morning Alarm");
+            db.insert(TABLE_ALARM_LOGS, null, alarmV);
+        }
+        db.close();
+    }
+
     public void clearAllHistory() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_LOCATION_LOGS, null, null);

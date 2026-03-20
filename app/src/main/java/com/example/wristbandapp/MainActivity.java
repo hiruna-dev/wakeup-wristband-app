@@ -141,6 +141,27 @@ public class MainActivity extends AppCompatActivity {
 
         // ── Button wiring ──────────────────────────────────────
 
+        TextView tvTitle = findViewById(R.id.tvTitle);
+        if (tvTitle != null) {
+            tvTitle.setOnClickListener(new View.OnClickListener() {
+                int tapCount = 0;
+                long lastTapTime = 0;
+                @Override
+                public void onClick(View v) {
+                    long currentTime = System.currentTimeMillis();
+                    if (currentTime - lastTapTime > 1000) tapCount = 0;
+                    lastTapTime = currentTime;
+                    tapCount++;
+                    if (tapCount == 7) {
+                        databaseHelper.seedDummyData();
+                        Toast.makeText(MainActivity.this, "Analytics DB populated!", Toast.LENGTH_SHORT).show();
+                        loadDashboard();
+                        tapCount = 0;
+                    }
+                }
+            });
+        }
+
         findViewById(R.id.btnConnect).setOnClickListener(v -> {
             Intent serviceIntent = new Intent(this, LocationService.class);
             serviceIntent.setAction("ACTION_SCAN_BLE");
