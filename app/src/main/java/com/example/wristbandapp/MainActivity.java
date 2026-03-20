@@ -89,13 +89,20 @@ public class MainActivity extends AppCompatActivity {
                 result -> {
                     if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                         Intent data = result.getData();
+                        int id = data.getIntExtra("id", -1);
                         String label = data.getStringExtra("label");
                         int hour = data.getIntExtra("hour", 7);
                         int minute = data.getIntExtra("minute", 0);
                         String repeatDays = data.getStringExtra("repeatDays");
                         String vibration = data.getStringExtra("vibration");
-                        int alarmId = (int) databaseHelper.insertAlarm(label, hour, minute, repeatDays, vibration);
-                        AlarmScheduler.schedule(this, alarmId, hour, minute, label);
+                        
+                        if (id == -1) {
+                            int alarmId = (int) databaseHelper.insertAlarm(label, hour, minute, repeatDays, vibration);
+                            AlarmScheduler.schedule(MainActivity.this, alarmId, hour, minute, label);
+                        } else {
+                            databaseHelper.updateAlarm(id, label, hour, minute, repeatDays, vibration);
+                            AlarmScheduler.schedule(MainActivity.this, id, hour, minute, label);
+                        }
                         loadDashboard();
                     }
                 });
@@ -104,14 +111,31 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new DashboardAdapter(dashboardItems, item -> {
-            if (item.type == DashboardItem.TYPE_ALARM) {
-                AlarmScheduler.cancel(this, item.id);
-                databaseHelper.deleteAlarm(item.id);
-            } else {
-                databaseHelper.deleteLocation(item.id);
+        adapter = new DashboardAdapter(dashboardItems, new DashboardAdapter.OnItemClickListener() {
+            @Override
+            public void onDeleteClick(DashboardItem item) {
+                if (item.type == DashboardItem.TYPE_ALARM) {
+                    AlarmScheduler.cancel(MainActivity.this, item.id);
+                    databaseHelper.deleteAlarm(item.id);
+                } else {
+                    databaseHelper.deleteLocation(item.id);
+                }
+                loadDashboard();
             }
-            loadDashboard();
+
+            @Override
+            public void onEditClick(DashboardItem item) {
+                if (item.type == DashboardItem.TYPE_ALARM) {
+                    Intent intent = new Intent(MainActivity.this, AlarmActivity.class);
+                    intent.putExtra("id", item.id);
+                    intent.putExtra("label", item.name);
+                    intent.putExtra("hour", item.hour);
+                    intent.putExtra("minute", item.minute);
+                    intent.putExtra("repeatDays", item.repeatDays);
+                    intent.putExtra("vibration", item.vibration);
+                    alarmLauncher.launch(intent);
+                }
+            }
         });
         recyclerView.setAdapter(adapter);
 

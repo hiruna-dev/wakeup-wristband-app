@@ -31,9 +31,9 @@
     <color name="purple_text_tertiary">#C4B5FD</color>
 
     <!-- Blue Theme Palette -->
-    <color name="blue_primary">#2563EB</color>
-    <color name="blue_dark">#1E40AF</color>
-    <color name="blue_medium">#3B82F6</color>
+    <color name="blue_primary">#3B82F6</color>
+    <color name="blue_dark">#2563EB</color>
+    <color name="blue_medium">#60A5FA</color>
     <color name="bg_screen_blue">#EFF6FF</color>
     <color name="blue_text_primary">#1E3A8A</color>
     <color name="blue_text_tertiary">#93C5FD</color>

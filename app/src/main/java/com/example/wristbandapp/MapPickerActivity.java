@@ -166,6 +166,10 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
 
         etName.setText(selectedPlaceName);
 
+        float defaultRadius = getSharedPreferences("AppPrefs", MODE_PRIVATE).getFloat("default_radius", 50f);
+        sliderRadius.setValue(defaultRadius);
+        tvRadiusLabel.setText("Radius: " + (int) defaultRadius + "m");
+
         // Update label when slider moves
         sliderRadius.addOnChangeListener((slider, value, fromUser) -> {
             tvRadiusLabel.setText("Radius: " + (int) value + "m");

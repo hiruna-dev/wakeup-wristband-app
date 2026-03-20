@@ -18,9 +18,9 @@
     <color name="bg_screen_purple">#F3E8FF</color>
     <color name="bg_screen_teal">#CCFBF1</color>
     <color name="black">#FF000000</color>
-    <color name="blue_dark">#1E40AF</color>
-    <color name="blue_medium">#3B82F6</color>
-    <color name="blue_primary">#2563EB</color>
+    <color name="blue_dark">#2563EB</color>
+    <color name="blue_medium">#60A5FA</color>
+    <color name="blue_primary">#3B82F6</color>
     <color name="blue_text_primary">#1E3A8A</color>
     <color name="blue_text_tertiary">#93C5FD</color>
     <color name="burgundy_faded">#7A364F</color>

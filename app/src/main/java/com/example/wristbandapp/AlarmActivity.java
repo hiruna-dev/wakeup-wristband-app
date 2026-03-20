@@ -64,6 +64,38 @@ public class AlarmActivity extends AppCompatActivity {
             }
         }
 
+        // Restore alarm properties if editing
+        Intent intent = getIntent();
+        final int alarmId = intent.getIntExtra("id", -1);
+        if (alarmId != -1) {
+            if (timePicker != null) {
+                timePicker.setHour(intent.getIntExtra("hour", 7));
+                timePicker.setMinute(intent.getIntExtra("minute", 0));
+            }
+            com.google.android.material.textfield.TextInputEditText et = findViewById(R.id.etAlarmLabel);
+            if (et != null) et.setText(intent.getStringExtra("label"));
+
+            String vib = intent.getStringExtra("vibration");
+            if (vib != null) {
+                selectVibration(vib, findViewById(R.id.vibLow), findViewById(R.id.vibMedium), findViewById(R.id.vibHigh));
+            }
+
+            String repeatDays = intent.getStringExtra("repeatDays");
+            if (repeatDays != null && !repeatDays.equals("Once")) {
+                String[] days = repeatDays.split(",");
+                for (String d : days) {
+                    d = d.trim();
+                    if (d.equals("Sun")) toggleDay(findViewById(R.id.daySun), 0);
+                    else if (d.equals("Mon")) toggleDay(findViewById(R.id.dayMon), 1);
+                    else if (d.equals("Tue")) toggleDay(findViewById(R.id.dayTue), 2);
+                    else if (d.equals("Wed")) toggleDay(findViewById(R.id.dayWed), 3);
+                    else if (d.equals("Thu")) toggleDay(findViewById(R.id.dayThu), 4);
+                    else if (d.equals("Fri")) toggleDay(findViewById(R.id.dayFri), 5);
+                    else if (d.equals("Sat")) toggleDay(findViewById(R.id.daySat), 6);
+                }
+            }
+        }
+
         // Set Alarm – save and return result to MainActivity
         Button btnSetAlarm = findViewById(R.id.btnSetAlarm);
         if (btnSetAlarm != null) {
@@ -82,6 +114,7 @@ public class AlarmActivity extends AppCompatActivity {
                 String repeatDays = buildRepeatDaysString(dayIds);
 
                 Intent result = new Intent();
+                result.putExtra("id", alarmId);
                 result.putExtra("label", label);
                 result.putExtra("hour", hour);
                 result.putExtra("minute", minute);

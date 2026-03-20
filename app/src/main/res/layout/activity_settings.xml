@@ -278,7 +278,7 @@
                             <View
                                 android:layout_width="24dp"
                                 android:layout_height="12dp"
-                                android:background="#2563EB"
+                                android:background="#3B82F6"
                                 android:layout_marginBottom="4dp"/>
 
                             <TextView
@@ -333,7 +333,7 @@
                         android:layout_height="52dp"
                         android:text="Clear History"
                         android:textColor="@color/white"
-                        android:backgroundTint="#EF4444"
+                        android:backgroundTint="?attr/colorAppPrimary"
                         app:cornerRadius="26dp"
                         style="@style/Widget.MaterialComponents.Button" />
 

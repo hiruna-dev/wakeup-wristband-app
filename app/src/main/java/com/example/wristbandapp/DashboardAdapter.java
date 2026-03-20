@@ -20,16 +20,17 @@ import java.util.List;
  */
 public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public interface OnDeleteClickListener {
+    public interface OnItemClickListener {
         void onDeleteClick(DashboardItem item);
+        void onEditClick(DashboardItem item);
     }
 
     private List<DashboardItem> items;
-    private final OnDeleteClickListener deleteListener;
+    private final OnItemClickListener itemListener;
 
-    public DashboardAdapter(List<DashboardItem> items, OnDeleteClickListener deleteListener) {
+    public DashboardAdapter(List<DashboardItem> items, OnItemClickListener itemListener) {
         this.items          = items;
-        this.deleteListener = deleteListener;
+        this.itemListener   = itemListener;
     }
 
     public void setItems(List<DashboardItem> items) {
@@ -79,7 +80,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         h.tvCoords.setText(String.format("Lat: %.5f, Lng: %.5f", item.latitude, item.longitude));
         h.tvRadius.setText("Radius: " + item.radiusMeters + "m");
         h.btnDelete.setOnClickListener(v -> {
-            if (deleteListener != null) deleteListener.onDeleteClick(item);
+            if (itemListener != null) itemListener.onDeleteClick(item);
         });
         if (h.btnViewMap != null) {
             h.btnViewMap.setOnClickListener(v -> {
@@ -100,7 +101,10 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 ? "Once" : item.repeatDays;
         h.tvRepeat.setText(days);
         h.btnDelete.setOnClickListener(v -> {
-            if (deleteListener != null) deleteListener.onDeleteClick(item);
+            if (itemListener != null) itemListener.onDeleteClick(item);
+        });
+        h.itemView.setOnClickListener(v -> {
+            if (itemListener != null) itemListener.onEditClick(item);
         });
     }
 

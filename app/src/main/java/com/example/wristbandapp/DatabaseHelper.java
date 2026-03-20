@@ -137,6 +137,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    public void updateAlarm(int id, String label, int hour, int minute, String repeatDays, String vibration) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("label", label);
+        values.put("hour", hour);
+        values.put("minute", minute);
+        values.put("repeat_days", repeatDays);
+        values.put("vibration", vibration);
+        db.update(TABLE_ALARMS, values, "id = ?", new String[] { String.valueOf(id) });
+        db.close();
+    }
+
     public List<DashboardItem> getAllAlarms() {
         List<DashboardItem> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

@@ -84,8 +84,10 @@ public class SettingsActivity extends AppCompatActivity {
     private void refreshVibUI() {
         TextView[] views = {defaultVibLow, defaultVibMedium, defaultVibHigh};
         String[] labels  = {"Low", "Medium", "High"};
-        int colorActive  = getColor(R.color.purple_primary);
-        int colorInactive = getColor(R.color.purple_primary);
+        android.util.TypedValue typedValue = new android.util.TypedValue();
+        getTheme().resolveAttribute(R.attr.colorAppPrimary, typedValue, true);
+        int colorActive  = typedValue.data;
+        int colorInactive = typedValue.data;
 
         for (int i = 0; i < views.length; i++) {
             if (views[i] == null) continue;
