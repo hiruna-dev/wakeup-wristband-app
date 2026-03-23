@@ -60,6 +60,8 @@ public class AlarmActivity extends AppCompatActivity {
             final int idx = i;
             TextView tv = findViewById(dayIds[i]);
             if (tv != null) {
+                // Initialize background correctly for current theme
+                updateDayBackground(tv, false);
                 tv.setOnClickListener(v -> toggleDay((TextView) v, idx));
             }
         }
@@ -141,30 +143,47 @@ public class AlarmActivity extends AppCompatActivity {
         vibHigh.setOnClickListener(v -> selectVibration("High", vibLow, vibMedium, vibHigh));
     }
 
+    private int getThemeColor() {
+        android.util.TypedValue typedValue = new android.util.TypedValue();
+        getTheme().resolveAttribute(R.attr.colorAppPrimary, typedValue, true);
+        return typedValue.data;
+    }
+
     private void selectVibration(String level, TextView low, TextView medium, TextView high) {
         selectedVibration = level;
         resetVibView(low, "Low");
         resetVibView(medium, "Medium");
         resetVibView(high, "High");
         TextView selected = level.equals("Low") ? low : level.equals("High") ? high : medium;
-        selected.setBackgroundColor(getColor(R.color.purple_primary));
+        selected.setBackgroundColor(getThemeColor());
         selected.setTextColor(getColor(R.color.white));
     }
 
     private void resetVibView(TextView tv, String label) {
         tv.setBackgroundColor(android.graphics.Color.TRANSPARENT);
-        tv.setTextColor(getColor(R.color.purple_primary));
+        tv.setTextColor(getThemeColor());
     }
 
     // ── Day toggles ────────────────────────────────────────────
 
     private void toggleDay(TextView dayView, int idx) {
         daySelected[idx] = !daySelected[idx];
-        if (daySelected[idx]) {
-            dayView.setBackgroundResource(R.drawable.shape_circle_filled);
+        updateDayBackground(dayView, daySelected[idx]);
+    }
+
+    private void updateDayBackground(TextView dayView, boolean isSelected) {
+        android.graphics.drawable.GradientDrawable drawable = new android.graphics.drawable.GradientDrawable();
+        drawable.setShape(android.graphics.drawable.GradientDrawable.OVAL);
+        int themeColor = getThemeColor();
+
+        if (isSelected) {
+            drawable.setColor(themeColor);
+            dayView.setBackground(drawable);
             dayView.setTextColor(getColor(R.color.white));
         } else {
-            dayView.setBackgroundResource(R.drawable.shape_circle_outline);
+            drawable.setColor(android.graphics.Color.TRANSPARENT);
+            drawable.setStroke((int)(1.5f * getResources().getDisplayMetrics().density), themeColor);
+            dayView.setBackground(drawable);
             dayView.setTextColor(getColor(R.color.text_tertiary));
         }
     }

@@ -90,6 +90,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 intent.putExtra("focusLng",  item.longitude);
                 intent.putExtra("focusName", item.name);
                 ctx.startActivity(intent);
+                if (ctx instanceof android.app.Activity) {
+                    ((android.app.Activity) ctx).overridePendingTransition(0, 0);
+                }
             });
         }
     }

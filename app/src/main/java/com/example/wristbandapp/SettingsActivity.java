@@ -160,14 +160,17 @@ public class SettingsActivity extends AppCompatActivity {
         findViewById(R.id.navHome).setOnClickListener(v -> {
             startActivity(new Intent(this, MainActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            overridePendingTransition(0, 0);
             finish();
         });
         findViewById(R.id.navMap).setOnClickListener(v -> {
             startActivity(new Intent(this, MapPickerActivity.class));
+            overridePendingTransition(0, 0);
             finish();
         });
         findViewById(R.id.navAnalytics).setOnClickListener(v -> {
             startActivity(new Intent(this, AnalyticsActivity.class));
+            overridePendingTransition(0, 0);
             finish();
         });
         // navSettings is the current screen — no action

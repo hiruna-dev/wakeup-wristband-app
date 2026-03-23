@@ -55,6 +55,9 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
                 Context context = v.getContext();
                 Intent intent = new Intent(context, MapPickerActivity.class);
                 context.startActivity(intent);
+                if (context instanceof android.app.Activity) {
+                    ((android.app.Activity) context).overridePendingTransition(0, 0);
+                }
             });
         }
     }

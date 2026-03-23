@@ -202,7 +202,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Map nav opens MapPickerActivity (via launcher so RESULT_OK is received)
         findViewById(R.id.navMap).setOnClickListener(
-                v -> mapPickerLauncher.launch(new Intent(MainActivity.this, MapPickerActivity.class)));
+                v -> {
+                    mapPickerLauncher.launch(new Intent(MainActivity.this, MapPickerActivity.class));
+                    overridePendingTransition(0, 0);
+                });
 
         checkPermissions();
         loadDashboard();
@@ -212,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
         if (navAnalytics != null) {
             navAnalytics.setOnClickListener(v -> {
                 startActivity(new Intent(this, AnalyticsActivity.class));
+                overridePendingTransition(0, 0);
             });
         }
 
@@ -219,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
         if (navSettings != null) {
             navSettings.setOnClickListener(v -> {
                 startActivity(new Intent(this, SettingsActivity.class));
+                overridePendingTransition(0, 0);
             });
         }
     }

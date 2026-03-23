@@ -75,6 +75,7 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
             navHome.setOnClickListener(v -> {
                 startActivity(new Intent(this, MainActivity.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                overridePendingTransition(0, 0);
             });
         }
 
@@ -82,6 +83,7 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         if (navAnalytics != null) {
             navAnalytics.setOnClickListener(v -> {
                 startActivity(new Intent(this, AnalyticsActivity.class));
+                overridePendingTransition(0, 0);
             });
         }
 
@@ -89,6 +91,7 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         if (navSettings != null) {
             navSettings.setOnClickListener(v -> {
                 startActivity(new Intent(this, SettingsActivity.class));
+                overridePendingTransition(0, 0);
             });
         }
     }

@@ -208,17 +208,20 @@ public class AnalyticsActivity extends AppCompatActivity {
         navHome.setOnClickListener(v -> {
             startActivity(new Intent(this, MainActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            overridePendingTransition(0, 0);
             finish();
         });
 
         navMap.setOnClickListener(v -> {
             startActivity(new Intent(this, MapPickerActivity.class));
+            overridePendingTransition(0, 0);
             finish();
         });
 
         if (navSettings != null) {
             navSettings.setOnClickListener(v -> {
                 startActivity(new Intent(this, SettingsActivity.class));
+                overridePendingTransition(0, 0);
                 finish();
             });
         }
