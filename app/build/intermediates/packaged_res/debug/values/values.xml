@@ -56,7 +56,7 @@
     <color name="text_secondary">#7A364F</color>
     <color name="text_tertiary">#DCA8A8</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="app_name">Wristband App</string>
+    <string name="app_name">Travel Wake Assist</string>
     <style name="Theme.WristbandApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/purple_primary</item>
         <item name="colorPrimaryVariant">@color/purple_dark</item>

@@ -27,7 +27,7 @@
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
                 android:fontFamily="@font/title"
-                android:text="Wristband Analytics"
+                android:text="Analytics"
                 android:textColor="@color/text_primary"
                 android:textSize="28sp" />
 

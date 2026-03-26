@@ -153,6 +153,7 @@ id tvThemeHint
 id tvTime
 id tvTitle
 id tvTotalAlerts
+id tvWeather
 id vibHigh
 id vibLow
 id vibMedium

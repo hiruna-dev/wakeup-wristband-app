@@ -23,6 +23,9 @@ public class DashboardItem {
     public String repeatDays; // e.g. "Mon, Wed, Fri"
     public String vibration;  // "Low" | "Medium" | "High"
 
+    // -- Live Weather Status (for locations) --
+    public String weatherStatus;
+
     /** Construct a location item */
     public DashboardItem(int id, String name, double latitude, double longitude, float radiusMeters) {
         this.type         = TYPE_LOCATION;

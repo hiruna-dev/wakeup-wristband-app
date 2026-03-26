@@ -156,8 +156,16 @@
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\shape_circle_outline.xml"
     },
     {
+        "merged": "com.example.wristbandapp-merged_res-4:/layout_activity_main.xml.flat",
+        "source": "com.example.wristbandapp-main-6:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\drawable_ic_location_pin.xml.flat",
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\drawable\\ic_location_pin.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_analytics.xml.flat",
+        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_analytics.xml"
     },
     {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\font_subtitle.otf.flat",
@@ -170,9 +178,5 @@
     {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_dialog_save_location.xml.flat",
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\dialog_save_location.xml"
-    },
-    {
-        "merged": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-merged_res-4:\\layout_activity_analytics.xml.flat",
-        "source": "C:\\Users\\Asus\\.gradle\\daemon\\8.5-rc-4\\com.example.wristbandapp-main-6:\\layout\\activity_analytics.xml"
     }
 ]

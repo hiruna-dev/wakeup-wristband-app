@@ -4158,6 +4158,7 @@ int id tvThemeHint 0x7f09022f
 int id tvTime 0x7f090230
 int id tvTitle 0x7f090231
 int id tvTotalAlerts 0x7f090232
+int id tvWeather 0x7f090251
 int id unchecked 0x7f090233
 int id uniform 0x7f090234
 int id unlabeled 0x7f090235

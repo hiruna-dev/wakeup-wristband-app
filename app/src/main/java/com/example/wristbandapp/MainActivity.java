@@ -210,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
         checkPermissions();
         loadDashboard();
         startLocationService();
+        checkWeatherAndNotify();
 
         View navAnalytics = findViewById(R.id.navAnalytics);
         if (navAnalytics != null) {
@@ -243,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
         dashboardItems.addAll(databaseHelper.getAllAlarms());
 
         adapter.setItems(dashboardItems);
+        fetchDashboardWeather();
     }
 
     // ── Lifecycle ──────────────────────────────────────────────
@@ -276,6 +278,129 @@ public class MainActivity extends AppCompatActivity {
         } else {
             startService(serviceIntent);
         }
+    }
+
+    // ── Weather Suggestion Feature ──────────────────────────────
+
+    private void fetchDashboardWeather() {
+        new Thread(() -> {
+            boolean updated = false;
+            for (DashboardItem item : dashboardItems) {
+                if (item.type == DashboardItem.TYPE_LOCATION) {
+                    try {
+                        String key = "c037a0a6a87f46faa74162912262503";
+                        String urlStr = "https://api.weatherapi.com/v1/current.json?key=" + key + "&q=" + item.latitude + "," + item.longitude;
+                        java.net.URL url = new java.net.URL(urlStr);
+                        java.net.HttpURLConnection conn = (java.net.HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("GET");
+                        conn.setConnectTimeout(3000);
+                        
+                        java.io.BufferedReader in = new java.io.BufferedReader(new java.io.InputStreamReader(conn.getInputStream()));
+                        StringBuilder response = new StringBuilder();
+                        String line;
+                        while ((line = in.readLine()) != null) response.append(line);
+                        in.close();
+                        
+                        org.json.JSONObject json = new org.json.JSONObject(response.toString());
+                        org.json.JSONObject current = json.getJSONObject("current");
+                        double tempC = current.getDouble("temp_c");
+                        String condition = current.getJSONObject("condition").getString("text");
+                        
+                        item.weatherStatus = String.format(java.util.Locale.getDefault(), "%.1f\u00B0C, %s", tempC, condition);
+                        updated = true;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        item.weatherStatus = "Weather: N/A";
+                        updated = true;
+                    }
+                }
+            }
+            if (updated) {
+                runOnUiThread(() -> adapter.notifyDataSetChanged());
+            }
+        }).start();
+    }
+
+    private void checkWeatherAndNotify() {
+        android.content.SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        long lastCheck = prefs.getLong("last_weather_check", 0);
+        long today = System.currentTimeMillis() / (1000L * 60 * 60 * 24);
+        if (lastCheck == today) return; 
+
+        new Thread(() -> {
+            try {
+                List<LocationItem> locs = databaseHelper.getAllLocations();
+                if (locs.isEmpty()) return;
+                LocationItem topLoc = locs.get(0); 
+                
+                String key = "c037a0a6a87f46faa74162912262503";
+                String urlStr = "https://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" 
+                                + topLoc.latitude + "," + topLoc.longitude + "&days=1";
+                java.net.URL url = new java.net.URL(urlStr);
+                java.net.HttpURLConnection conn = (java.net.HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.setConnectTimeout(5000);
+                
+                java.io.BufferedReader in = new java.io.BufferedReader(new java.io.InputStreamReader(conn.getInputStream()));
+                StringBuilder response = new StringBuilder();
+                String line;
+                while ((line = in.readLine()) != null) response.append(line);
+                in.close();
+                
+                org.json.JSONObject json = new org.json.JSONObject(response.toString());
+                org.json.JSONArray forecastDays = json.getJSONObject("forecast").getJSONArray("forecastday");
+                org.json.JSONObject todayObj = forecastDays.getJSONObject(0);
+                org.json.JSONArray hours = todayObj.getJSONArray("hour");
+                
+                String rainTime = null;
+                for (int i = 0; i < hours.length(); i++) {
+                    org.json.JSONObject hourObj = hours.getJSONObject(i);
+                    int willRain = hourObj.optInt("will_it_rain", 0);
+                    int willSnow = hourObj.optInt("will_it_snow", 0);
+                    if (willRain == 1 || willSnow == 1) {
+                        String timeStr = hourObj.getString("time"); 
+                        if (timeStr.length() > 11) {
+                            rainTime = timeStr.substring(11); // Extract HH:MM
+                            break;
+                        }
+                    }
+                }
+                
+                if (rainTime != null) {
+                    sendRainNotification(topLoc.name, rainTime);
+                }
+
+                prefs.edit().putLong("last_weather_check", today).apply();
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    private void sendRainNotification(String locName, String time) {
+        android.app.NotificationManager notificationManager = (android.app.NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        String channelId = "weather_alerts";
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            android.app.NotificationChannel channel = new android.app.NotificationChannel(
+                channelId, "Weather Alerts", android.app.NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        android.app.PendingIntent pendingIntent = android.app.PendingIntent.getActivity(
+            this, 0, new Intent(this, MainActivity.class), 
+            android.app.PendingIntent.FLAG_IMMUTABLE);
+
+        androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(this, channelId)
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setContentTitle("Weather Alert \u26C8")
+            .setContentText("Precipitation expected today around " + time + " near " + locName + ".")
+            .setAutoCancel(true)
+            .setPriority(androidx.core.app.NotificationCompat.PRIORITY_HIGH)
+            .setContentIntent(pendingIntent);
+
+        notificationManager.notify(2001, builder.build());
     }
 
     private void checkPermissions() {

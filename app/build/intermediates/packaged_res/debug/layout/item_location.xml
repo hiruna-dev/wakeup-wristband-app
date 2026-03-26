@@ -95,6 +95,21 @@
             app:layout_constraintEnd_toStartOf="@id/ivChevron"
             app:layout_constraintTop_toBottomOf="@id/tvCoords" />
 
+        <!-- Weather Status -->
+        <TextView
+            android:id="@+id/tvWeather"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
+            android:text="Weather: Loading..."
+            android:textColor="?attr/colorAppPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/viewMapThumb"
+            app:layout_constraintEnd_toStartOf="@id/ivChevron"
+            app:layout_constraintTop_toBottomOf="@id/tvRadius" />
+
         <!-- "View on Map" chip button -->
         <Button
             android:id="@+id/btnViewMap"
@@ -112,7 +127,7 @@
             android:textColor="?attr/colorAppPrimaryDark"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/viewMapThumb"
-            app:layout_constraintTop_toBottomOf="@id/tvRadius"
+            app:layout_constraintTop_toBottomOf="@id/tvWeather"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <!-- Delete button (top-right, subtle) -->

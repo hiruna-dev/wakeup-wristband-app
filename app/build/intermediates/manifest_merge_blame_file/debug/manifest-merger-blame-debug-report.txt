@@ -17,53 +17,53 @@
 13    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 13-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:6:5-85
 13-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:6:22-82
-14    <uses-permission android:name="android.permission.BLUETOOTH" />
-14-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:8:5-68
-14-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:8:22-65
-15    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-15-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:9:5-74
-15-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:9:22-71
-16    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-16-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:10:5-76
-16-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:10:22-73
-17    <uses-permission
-17-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:11:5-120
-18        android:name="android.permission.BLUETOOTH_SCAN"
-18-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:11:22-70
-19        android:usesPermissionFlags="neverForLocation" />
-19-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:11:71-117
-20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-20-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:13:5-77
-20-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:13:22-74
-21    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
-21-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:14:5-86
-21-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:14:22-83
-22    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-22-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:15:5-77
-22-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:15:22-74
-23    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-23-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:16:5-81
-23-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:16:22-78
-24    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-24-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:17:5-79
-24-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:17:22-76
-25    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-25-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:18:5-74
-25-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:18:22-71
-26
-27    <uses-feature
-27-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:20:5-90
-28        android:name="android.hardware.bluetooth_le"
-28-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:20:19-63
-29        android:required="true" />
-29-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:20:64-87
-30
-31    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-31-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:11:5-76
-31-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:11:22-73
-32    <uses-permission android:name="android.permission.INTERNET" /> <!-- Include required permissions for Google Maps API to run. -->
-32-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:12:5-67
-32-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:12:22-64
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:7:5-67
+14-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:7:22-64
+15    <uses-permission android:name="android.permission.BLUETOOTH" />
+15-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:9:5-68
+15-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:9:22-65
+16    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+16-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:10:5-74
+16-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:10:22-71
+17    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+17-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:11:5-76
+17-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:11:22-73
+18    <uses-permission
+18-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:12:5-120
+19        android:name="android.permission.BLUETOOTH_SCAN"
+19-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:12:22-70
+20        android:usesPermissionFlags="neverForLocation" />
+20-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:12:71-117
+21    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+21-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:14:5-77
+21-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:14:22-74
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+22-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:15:5-86
+22-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:15:22-83
+23    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+23-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:16:5-77
+23-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:16:22-74
+24    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+24-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:17:5-81
+24-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:17:22-78
+25    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+25-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:18:5-79
+25-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:18:22-76
+26    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+26-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:19:5-74
+26-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:19:22-71
+27
+28    <uses-feature
+28-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:21:5-90
+29        android:name="android.hardware.bluetooth_le"
+29-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:21:19-63
+30        android:required="true" />
+30-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:21:64-87
+31
+32    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Include required permissions for Google Maps API to run. -->
+32-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:11:5-76
+32-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:11:22-73
 33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 33-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Asus\.gradle\caches\transforms-3\b3419972e9baa92a06101d8c9bba5402\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
 33-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Asus\.gradle\caches\transforms-3\b3419972e9baa92a06101d8c9bba5402\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:22-76
@@ -96,80 +96,80 @@
 49-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\0e229ea2ce3e11d4afd33abef97690ad\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 50
 51    <application
-51-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:22:5-58:19
+51-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:23:5-59:19
 52        android:allowBackup="true"
-52-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:23:9-35
+52-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:24:9-35
 53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 53-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\0e229ea2ce3e11d4afd33abef97690ad\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 54        android:debuggable="true"
 55        android:extractNativeLibs="false"
 56        android:icon="@mipmap/ic_launcher"
-56-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:24:9-43
+56-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:25:9-43
 57        android:label="@string/app_name"
-57-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:25:9-41
+57-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:26:9-41
 58        android:roundIcon="@mipmap/ic_launcher_round"
-58-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:26:9-54
+58-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:27:9-54
 59        android:supportsRtl="true"
-59-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:27:9-35
+59-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:28:9-35
 60        android:testOnly="true"
 61        android:theme="@style/Theme.WristbandApp" >
-61-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:28:9-50
+61-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:29:9-50
 62        <activity
-62-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:29:9-36:20
+62-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:30:9-37:20
 63            android:name="com.example.wristbandapp.MainActivity"
-63-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:30:13-41
+63-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:31:13-41
 64            android:exported="true" >
-64-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:31:13-36
+64-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:32:13-36
 65            <intent-filter>
-65-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:32:13-35:29
+65-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:33:13-36:29
 66                <action android:name="android.intent.action.MAIN" />
-66-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:33:17-69
-66-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:33:25-66
+66-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:34:17-69
+66-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:34:25-66
 67
 68                <category android:name="android.intent.category.LAUNCHER" />
-68-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:34:17-77
-68-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:34:27-74
+68-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:35:17-77
+68-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:35:27-74
 69            </intent-filter>
 70        </activity>
 71        <activity android:name="com.example.wristbandapp.MapPickerActivity" />
-71-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:37:9-55
-71-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:37:19-52
+71-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:38:9-55
+71-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:38:19-52
 72        <activity android:name="com.example.wristbandapp.AlarmActivity" />
-72-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:38:9-51
-72-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:38:19-48
+72-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:39:9-51
+72-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:39:19-48
 73        <activity android:name="com.example.wristbandapp.SettingsActivity" />
-73-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:39:9-54
-73-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:39:19-51
+73-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:40:9-54
+73-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:40:19-51
 74        <activity
-74-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:41:9-44:57
+74-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:42:9-45:57
 75            android:name="com.example.wristbandapp.AnalyticsActivity"
-75-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:42:13-46
+75-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:43:13-46
 76            android:exported="false"
-76-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:43:13-37
+76-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:44:13-37
 77            android:theme="@style/Theme.WristbandApp" />
-77-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:44:13-54
+77-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:45:13-54
 78
 79        <meta-data
 80            android:name="com.google.android.geo.API_KEY"
-80-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:47:13-58
+80-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:48:13-58
 81            android:value="AIzaSyBVMtaQsJJNjbEdfgg_-DJkc5ILfhjnSuM" />
-81-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:48:13-44
+81-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:49:13-44
 82
 83        <receiver
-83-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:50:9-52:40
+83-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:51:9-53:40
 84            android:name="com.example.wristbandapp.AlarmReceiver"
-84-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:51:13-42
+84-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:52:13-42
 85            android:exported="false" />
-85-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:52:13-37
+85-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:53:13-37
 86
 87        <service
-87-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:54:9-57:40
+87-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:55:9-58:40
 88            android:name="com.example.wristbandapp.LocationService"
-88-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:55:13-44
+88-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:56:13-44
 89            android:exported="false"
-89-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:57:13-37
+89-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:58:13-37
 90            android:foregroundServiceType="location" />
-90-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:56:13-53
+90-->C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:57:13-53
 91
 92        <activity
 92-->[com.google.android.libraries.places:places:3.3.0] C:\Users\Asus\.gradle\caches\transforms-3\0e7ae4638c2e5a43449e9220162190aa\transformed\jetified-places-3.3.0\AndroidManifest.xml:15:9-21:20

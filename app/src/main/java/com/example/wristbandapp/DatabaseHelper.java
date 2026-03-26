@@ -333,7 +333,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void seedDummyData() {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor c = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_LOCATION_LOGS, null);
+        Cursor c = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_LOCATIONS + " WHERE name='NIBM'", null);
         if (c.moveToFirst() && c.getInt(0) > 0) {
             c.close();
             db.close();
@@ -354,6 +354,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             v.put("radius_meters", 150);
             locIds[i] = db.insert(TABLE_LOCATIONS, null, v);
         }
+
+        ContentValues a1 = new ContentValues();
+        a1.put("label", "Morning Run");
+        a1.put("hour", 6);
+        a1.put("minute", 30);
+        a1.put("repeat_days", "Mon, Wed, Fri");
+        a1.put("vibration", "High");
+        long alarmId1 = db.insert(TABLE_ALARMS, null, a1);
+
+        ContentValues a2 = new ContentValues();
+        a2.put("label", "Class Alarm");
+        a2.put("hour", 8);
+        a2.put("minute", 0);
+        a2.put("repeat_days", "Mon, Tue, Thu");
+        a2.put("vibration", "Medium");
+        long alarmId2 = db.insert(TABLE_ALARMS, null, a2);
 
         java.util.Calendar cal = java.util.Calendar.getInstance();
         long now = cal.getTimeInMillis();
@@ -388,9 +404,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         for (int i = 0; i < 6; i++) {
             long triggerMs = now - rnd.nextInt((int)(7 * oneDayMs));
             ContentValues alarmV = new ContentValues();
-            alarmV.put("alarm_id", 1);
+            alarmV.put("alarm_id", alarmId1);
             alarmV.put("trigger_time", triggerMs);
-            alarmV.put("label", "Morning Alarm");
+            alarmV.put("label", "Morning Run");
             db.insert(TABLE_ALARM_LOGS, null, alarmV);
         }
         db.close();

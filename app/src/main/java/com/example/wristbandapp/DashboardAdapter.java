@@ -79,6 +79,11 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         h.tvName.setText(item.name);
         h.tvCoords.setText(String.format("Lat: %.5f, Lng: %.5f", item.latitude, item.longitude));
         h.tvRadius.setText("Radius: " + item.radiusMeters + "m");
+        
+        if (h.tvWeather != null) {
+            h.tvWeather.setText(item.weatherStatus != null ? item.weatherStatus : "Weather: Loading...");
+        }
+
         h.btnDelete.setOnClickListener(v -> {
             if (itemListener != null) itemListener.onDeleteClick(item);
         });
@@ -114,7 +119,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     // ── ViewHolders ────────────────────────────────────────────
 
     static class LocationViewHolder extends RecyclerView.ViewHolder {
-        TextView    tvName, tvCoords, tvRadius;
+        TextView    tvName, tvCoords, tvRadius, tvWeather;
         ImageButton btnDelete;
         Button      btnViewMap;
 
@@ -123,6 +128,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             tvName    = itemView.findViewById(R.id.tvName);
             tvCoords  = itemView.findViewById(R.id.tvCoords);
             tvRadius  = itemView.findViewById(R.id.tvRadius);
+            tvWeather = itemView.findViewById(R.id.tvWeather);
             btnDelete = itemView.findViewById(R.id.btnDelete);
             btnViewMap= itemView.findViewById(R.id.btnViewMap);
         }

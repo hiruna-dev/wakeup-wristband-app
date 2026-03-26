@@ -73,7 +73,7 @@ public class LocationService extends Service {
                 notificationIntent, PendingIntent.FLAG_IMMUTABLE);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Wristband App Running")
+                .setContentTitle("Travel Wake Assist Running")
                 .setContentText("Monitoring location for alarms...")
                 .setSmallIcon(android.R.drawable.ic_menu_mylocation)
                 .setContentIntent(pendingIntent)
