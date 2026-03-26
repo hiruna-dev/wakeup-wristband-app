@@ -56,6 +56,7 @@ color text_primary
 color text_secondary
 color text_tertiary
 color white
+drawable app_logo
 drawable bg_bottom_nav
 drawable bg_screen_gradient
 drawable ic_alert

@@ -189,9 +189,9 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Asus\.gradle\cache
 	android:label
 		ADDED from C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:26:9-41
 	android:roundIcon
-		ADDED from C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:27:9-54
+		ADDED from C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:27:9-47
 	android:icon
-		ADDED from C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:25:9-43
+		ADDED from C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:25:9-42
 	android:allowBackup
 		ADDED from C:\Users\Asus\.gemini\antigravity\scratch\WristbandApp\app\src\main\AndroidManifest.xml:24:9-35
 	android:theme
